@@ -23,11 +23,6 @@ func _draw():
 		)
 
 
-#func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	#if event is InputEventMouseMotion:
-		#print(event.relative, " ", shape_idx, " ", shape_owner_get_owner(shape_idx))
-
-
 func _on_mouse_shape_entered(shape_idx: int) -> void:
 	var collision: CollisionShape2D = shape_owner_get_owner(shape_idx)
 	draw_mark = true

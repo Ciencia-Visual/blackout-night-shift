@@ -3,6 +3,7 @@ class_name Puzzle
 
 @export var grid_container: GridContainer
 @export var work_space: BoxContainer
+@export var energy_supply: Area2D
 
 const PUZZLES := {
 	"puzzle_1": preload("res://resources/circuit_puzzles/puzzles/puzzle_1.tres")
@@ -14,7 +15,8 @@ var dragging_component: Dragging = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_inventory(PUZZLES.puzzle_1)
-	pass
+	energy_supply.mark_terminal.connect(_on_mark_terminal)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,17 +38,22 @@ func load_inventory(puzzle: PuzzleData):
 			slot.button_down.connect(_on_slot_down.bind(slot))
 	
 			
-# Click no item do iventario
+# Click (down) no item do iventario
 func _on_slot_down(slot):
 	# gerar uma cena do item
 	var component = slot.get_meta("component_data")
 	var scene_component: Node2D = component.scene.instantiate()
+	var terminais : Area2D = scene_component.get_node("Terminais")
+	
+	terminais.mark_terminal.connect(_on_mark_terminal)
+	
 	work_space.add_child(scene_component)
 	scene_component.position = scene_component.find_child("Dragging").get_mouse_position()
 	
 	# Seguir o mouse
 	dragging_component = scene_component.find_child("Dragging")
 	dragging_component.start_drag()
+	
 	
 
 func _input(event):
@@ -57,5 +64,6 @@ func _input(event):
 				dragging_component = null
 
 
-func _on_terminais_mark_terminal() -> void:
-	pass # Replace with function body.
+# Mouse por cima da pinagem
+func _on_mark_terminal():
+	print("Mark")
