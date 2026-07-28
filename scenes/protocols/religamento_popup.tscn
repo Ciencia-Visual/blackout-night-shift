@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://7x2ox503rvg7"]
+
+[ext_resource type="Script" uid="uid://dm8yias2sy8ty" path="res://scenes/protocols/religamento_popup.gd" id="1_5senc"]
+
+[node name="ReligamentoPopup" type="Panel" unique_id=100306170]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -266.0
+offset_right = 387.0
+grow_vertical = 0
+script = ExtResource("1_5senc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=940675243]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1493221747]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=584975934]
+layout_mode = 2
+text = "PROTOCOLO 003"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1844182174]
+layout_mode = 2
+text = "Disjuntor D-17 desarmado.
+Aguarde a corrente residual cair."
+
+[node name="CurrentBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=656826981]
+layout_mode = 2
+max_value = 400.0
+step = 1.0
+
+[node name="CurrentValue" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1009711572]
+layout_mode = 2
+text = "400 A"
+horizontal_alignment = 1
+
+[node name="ReligarButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=954276842]
+layout_mode = 2
+text = "RELIGAR DISJUNTOR"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReligarButton" to="." method="_on_religar_button_pressed"]

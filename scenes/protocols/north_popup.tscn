@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://jjb8221sadb5"]
+
+[ext_resource type="StyleBox" uid="uid://cnjmwflrfde6g" path="res://resources/popup/styles_container.tres" id="1_ligh0"]
+[ext_resource type="Texture2D" uid="uid://gvir1t04bokf" path="res://assets/icon-close.svg" id="2_bg03v"]
+[ext_resource type="Script" uid="uid://dcoqqq1juyric" path="res://scenes/protocols/north_popup.gd" id="2_gx7bg"]
+[ext_resource type="ButtonGroup" uid="uid://dwapjkke68cyq" path="res://resources/popup/ButtonGroup/NothPanel.tres" id="3_blhsx"]
+[ext_resource type="StyleBox" uid="uid://dh2q6sswn27on" path="res://resources/popup/styles_content.tres" id="4_rfcte"]
+[ext_resource type="Script" uid="uid://exmr3ku78duh" path="res://scenes/protocols/popup_close.gd" id="6_cw55j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oq4pw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bg03v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wkpby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_blhsx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ligh0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfcte"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4lbh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24l7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cqg0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxmnl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kouhr"]
+
+[node name="Northpanelscript" type="Panel" unique_id=716885716 node_paths=PackedStringArray("option_a", "option_b", "confirm_button", "result_label")]
+custom_minimum_size = Vector2(650, 420)
+offset_right = 700.0
+offset_bottom = 450.0
+theme_override_styles/panel = ExtResource("1_ligh0")
+script = ExtResource("2_gx7bg")
+option_a = NodePath("MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer2/OptionA")
+option_b = NodePath("MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer2/OptionB")
+confirm_button = NodePath("MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/ConfirmButton")
+result_label = NodePath("MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/ResultLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2025557629]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1361719372]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleWindow" type="Label" parent="MarginContainer/VBoxContainer" unique_id=199975154]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Painel Norte"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonClose" type="Button" parent="MarginContainer/VBoxContainer/TitleWindow" unique_id=903989855]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oq4pw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bg03v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wkpby")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_blhsx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ligh0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rfcte")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_s4lbh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_24l7g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2cqg0")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_oxmnl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kouhr")
+icon = ExtResource("2_bg03v")
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer" unique_id=1697762208]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_rfcte")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Panel" unique_id=770012114]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 274.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=325786327]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1728693574]
+layout_mode = 2
+
+[node name="Protocoltitle" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1230003921]
+layout_mode = 2
+text = "PROTOCOLO PR-001"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=33878186]
+layout_mode = 2
+text = "Falha detectada.
+O condutor perdeu elétrons.
+Qual procedimento deve ser realizado?"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=988966660]
+layout_mode = 2
+
+[node name="OptionA" type="CheckBox" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=402680289]
+layout_mode = 2
+button_group = ExtResource("3_blhsx")
+text = "Inserir elétrons"
+
+[node name="OptionB" type="CheckBox" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=541218767]
+layout_mode = 2
+button_group = ExtResource("3_blhsx")
+text = "Inserir prótons"
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=230040411]
+layout_mode = 2
+text = "Confirmar"
+
+[node name="ResultLabel" type="Label" parent="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1902589263]
+layout_mode = 2
+
+[node name="PopupClose" type="Node" parent="." unique_id=313273548 node_paths=PackedStringArray("close_button")]
+script = ExtResource("6_cw55j")
+close_button = NodePath("../MarginContainer/VBoxContainer/TitleWindow/ButtonClose")
+metadata/_custom_type_script = "uid://exmr3ku78duh"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]

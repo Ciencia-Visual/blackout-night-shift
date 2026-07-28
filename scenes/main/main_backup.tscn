@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dar6f2cy33vg"]
+
+[ext_resource type="Script" uid="uid://ba4chynsvcomg" path="res://scenes/main/game_manager.gd" id="1_kyyuk"]
+
+[node name="Main" type="Control" unique_id=420138955]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1424598140]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1227666721]
+
+[node name="MainMargin" type="MarginContainer" parent="HUD" unique_id=442120324]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainLayout" type="VBoxContainer" parent="HUD/MainMargin" unique_id=1247259643]
+layout_mode = 2
+
+[node name="HeaderPanel" type="Panel" parent="HUD/MainMargin/MainLayout" unique_id=231140904]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+
+[node name="HeaderContainer" type="VBoxContainer" parent="HUD/MainMargin/MainLayout/HeaderPanel" unique_id=470595618]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopRow" type="HBoxContainer" parent="HUD/MainMargin/MainLayout/HeaderPanel/HeaderContainer" unique_id=150291712]
+layout_mode = 2
+
+[node name="BottomRow" type="HBoxContainer" parent="HUD/MainMargin/MainLayout/HeaderPanel/HeaderContainer" unique_id=1817143986]
+layout_mode = 2
+
+[node name="GameArea" type="HBoxContainer" parent="HUD/MainMargin/MainLayout" unique_id=41768598]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ViewPanel" type="Panel" parent="HUD/MainMargin/MainLayout/GameArea" unique_id=807680559]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="GameViewport" type="SubViewportContainer" parent="HUD/MainMargin/MainLayout/GameArea/ViewPanel" unique_id=1268888799]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameWorld" type="SubViewport" parent="HUD/MainMargin/MainLayout/GameArea/ViewPanel/GameViewport" unique_id=1468230570]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="world" type="Node2D" parent="HUD/MainMargin/MainLayout/GameArea/ViewPanel/GameViewport/GameWorld" unique_id=536132510]
+
+[node name="ControlPanel" type="Panel" parent="HUD/MainMargin/MainLayout/GameArea" unique_id=677384973]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BottomArea" type="HBoxContainer" parent="HUD/MainMargin/MainLayout" unique_id=1649040444]
+layout_mode = 2
+
+[node name="LogPanel" type="Panel" parent="HUD/MainMargin/MainLayout/BottomArea" unique_id=930058213]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="LogLabel" type="RichTextLabel" parent="HUD/MainMargin/MainLayout/BottomArea/LogPanel" unique_id=199890445]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 29.0
+text = "Sistema Iniciado..."
+
+[node name="StatusPanel" type="Panel" parent="HUD/MainMargin/MainLayout/BottomArea" unique_id=1137013505]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Popup Layer" type="CanvasLayer" parent="HUD" unique_id=103757095]
+
+[node name="Managers" type="Node" parent="." unique_id=183515664]
+
+[node name="GameManager" type="Node" parent="Managers" unique_id=1016078995]
+script = ExtResource("1_kyyuk")
+
+[node name="RobotManager" type="Node" parent="Managers" unique_id=397020687]
+
+[node name="AudioManager" type="Node" parent="Managers" unique_id=1819402590]
+
+[node name="PowerManager" type="Node" parent="Managers" unique_id=412772614]

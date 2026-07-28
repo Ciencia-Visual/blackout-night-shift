@@ -1,0 +1,371 @@
+[gd_scene format=3 uid="uid://c2pt2tij3dejt"]
+
+[ext_resource type="PackedScene" uid="uid://c76c2jv0nw5sl" path="res://icons/Desk.glb" id="1_6o3pr"]
+[ext_resource type="PackedScene" uid="uid://dyxgav8afl7fm" path="res://icons/Ac Stacked.glb" id="3_m3sif"]
+[ext_resource type="PackedScene" uid="uid://cbvyvb6r8h7b4" path="res://icons/Air Conditioner.glb" id="4_7kys7"]
+[ext_resource type="PackedScene" uid="uid://croy6d1cwmryi" path="res://icons/Cyberpunk Platform-dHymLbsOMY.glb" id="5_im5tk"]
+[ext_resource type="PackedScene" uid="uid://d3gij0gy12o5v" path="res://icons/Cyberpunk Platform.glb" id="6_yuq0v"]
+[ext_resource type="PackedScene" uid="uid://cq2p1rlypxfk5" path="res://icons/2P Duct Pipe.glb" id="7_b7mk8"]
+[ext_resource type="Texture2D" uid="uid://bhq55y2c5m22n" path="res://backgrounds/back3d1.jpeg" id="8_doiwj"]
+[ext_resource type="PackedScene" uid="uid://4ybb5swnhcmc" path="res://icons/TV-mBGTVozH1u.glb" id="8_im5tk"]
+[ext_resource type="PackedScene" uid="uid://xmjpq2b7tvwm" path="res://icons/source/crt_tv.glb" id="9_58xho"]
+[ext_resource type="PackedScene" uid="uid://c6sg7rdcrwds0" path="res://icons/Platform_Window_Thin.gltf" id="9_yuq0v"]
+[ext_resource type="Script" uid="uid://bx8vvhvn2pnig" path="res://scenes/3D/camera_pivot.gd" id="10_b7mk8"]
+[ext_resource type="PackedScene" uid="uid://dye46dh1eyjpj" path="res://icons/industrial_electrical_and_panel_assembly_asset.glb" id="10_doiwj"]
+[ext_resource type="PackedScene" uid="uid://4noyrqdm52f2" path="res://icons/electric_box_33.glb" id="11_2irhw"]
+[ext_resource type="Script" uid="uid://npgfvq2ejdl8" path="res://scenes/3D/sliding_doors.gd" id="13_2irhw"]
+[ext_resource type="PackedScene" uid="uid://cg7yg3yufhnp8" path="res://icons/lg_gaming_monitor__low_poly__game_ready.glb" id="13_llc1v"]
+[ext_resource type="PackedScene" uid="uid://cflfei0ewcw44" path="res://icons/hp_laptop_low_poly__game_ready_3d_model.glb" id="14_7qjpn"]
+[ext_resource type="Script" uid="uid://bai3vywttu3oh" path="res://scenes/3D/slidingdoorbutton.gd" id="14_llc1v"]
+[ext_resource type="Texture2D" uid="uid://cc0mpoivqnkqy" path="res://backgrounds/rightdoorimage.jpeg" id="14_n802c"]
+[ext_resource type="Texture2D" uid="uid://bufcaoqlr1u0t" path="res://backgrounds/leftdoorimage.jpeg" id="15_dnkox"]
+[ext_resource type="PackedScene" uid="uid://bhmmjjk11ddwn" path="res://icons/electrical_breaker_panel_box__lp_model.glb" id="15_n802c"]
+[ext_resource type="PackedScene" uid="uid://dpv6xv8e8tgpn" path="res://scenes/panels/computer_ui.tscn" id="21_dnkox"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rkk07"]
+size = Vector3(2.8, 0.1, 1.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_01y1c"]
+size = Vector3(10, 0.2, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8du81"]
+albedo_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+metallic = 0.44
+metallic_specular = 0.65
+
+[sub_resource type="BoxMesh" id="BoxMesh_spyda"]
+size = Vector3(10, 5, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llc1v"]
+albedo_color = Color(0.7413847, 0.7413847, 0.7413844, 0.3254902)
+albedo_texture = ExtResource("8_doiwj")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_abjja"]
+size = Vector3(3, 5, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2irhw"]
+albedo_texture = ExtResource("8_doiwj")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n802c"]
+albedo_texture = ExtResource("8_doiwj")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jyvnd"]
+size = Vector3(16, 0.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qjpn"]
+albedo_texture = ExtResource("8_doiwj")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_omq3p"]
+size = Vector3(1, 4, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1lkq"]
+albedo_texture = ExtResource("14_n802c")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53wbm"]
+albedo_texture = ExtResource("15_dnkox")
+uv1_scale = Vector3(2, 2, 2)
+uv2_scale = Vector3(2, 2, 2)
+
+[sub_resource type="Animation" id="Animation_llc1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leftdoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5, 2, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rightdoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5, 2, -2.5)]
+}
+
+[sub_resource type="Animation" id="Animation_7qjpn"]
+resource_name = "open"
+length = 1.22
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leftdoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-5, 2, -0.5), Vector3(-5, 2, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rightdoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-5, 2, -1.5), Vector3(-5, 2, -2.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n802c"]
+_data = {
+&"RESET": SubResource("Animation_llc1v"),
+&"open": SubResource("Animation_7qjpn")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_spyda"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_01y1c"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_jv8vb"]
+size = Vector3(8, 6, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rdpry"]
+albedo_texture = ExtResource("8_doiwj")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdpry"]
+size = Vector3(2, 0.1, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm8ty"]
+albedo_color = Color(0.072842635, 0.072842635, 0.072842635, 1)
+metallic = 0.6
+metallic_specular = 0.13
+
+[node name="ControlRoom" type="Node3D" unique_id=1820649514]
+
+[node name="Placeholders" type="Node3D" parent="." unique_id=248679365]
+
+[node name="Operatordesk" type="MeshInstance3D" parent="Placeholders" unique_id=1402721389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.7)
+mesh = SubResource("BoxMesh_rkk07")
+
+[node name="Desk" parent="Placeholders/Operatordesk" unique_id=850838389 instance=ExtResource("1_6o3pr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.5, 0, -2)
+
+[node name="Airconditioner" parent="Placeholders" unique_id=608032220 instance=ExtResource("3_m3sif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.5, -2)
+
+[node name="Airconditioner2" parent="Placeholders" unique_id=1945786955 instance=ExtResource("4_7kys7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3.5, -2)
+
+[node name="Airconditioner3" parent="Placeholders" unique_id=138018171 instance=ExtResource("4_7kys7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.5, -2)
+
+[node name="Airconditioner4" parent="Placeholders" unique_id=478552252 instance=ExtResource("4_7kys7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.5, -2)
+
+[node name="Equipaments" parent="Placeholders" unique_id=1176596461 instance=ExtResource("5_im5tk")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 5, -2)
+
+[node name="Equipaments2" parent="Placeholders" unique_id=1697598272 instance=ExtResource("6_yuq0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5, -3)
+
+[node name="Ducts" parent="Placeholders" unique_id=1317774687 instance=ExtResource("7_b7mk8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 4.5, -4)
+
+[node name="Tv" parent="Placeholders" unique_id=1054929766 instance=ExtResource("8_im5tk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -2)
+
+[node name="Structure" type="Node3D" parent="." unique_id=1950339874]
+
+[node name="Floor" type="MeshInstance3D" parent="Structure" unique_id=753796583]
+mesh = SubResource("BoxMesh_01y1c")
+surface_material_override/0 = SubResource("StandardMaterial3D_8du81")
+
+[node name="Frontwall" type="MeshInstance3D" parent="Structure" unique_id=1606398406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
+mesh = SubResource("BoxMesh_spyda")
+surface_material_override/0 = SubResource("StandardMaterial3D_llc1v")
+
+[node name="Leftwallleft2" type="MeshInstance3D" parent="Structure" unique_id=1584442183]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2.5, -3.5)
+mesh = SubResource("BoxMesh_abjja")
+surface_material_override/0 = SubResource("StandardMaterial3D_2irhw")
+
+[node name="Leftwallleft" type="MeshInstance3D" parent="Structure" unique_id=445857180]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2.5, 1.5)
+mesh = SubResource("BoxMesh_abjja")
+surface_material_override/0 = SubResource("StandardMaterial3D_n802c")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Structure" unique_id=1202009724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("BoxMesh_jyvnd")
+
+[node name="Rightwall" type="MeshInstance3D" parent="Structure" unique_id=960140429]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 2.5, 0)
+mesh = SubResource("BoxMesh_spyda")
+surface_material_override/0 = SubResource("StandardMaterial3D_7qjpn")
+
+[node name="Frontwindow" parent="Structure" unique_id=358540184 instance=ExtResource("9_yuq0v")]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 1, 3, -3)
+
+[node name="Sketchfab_Scene" parent="Structure" unique_id=333192809 instance=ExtResource("9_58xho")]
+transform = Transform3D(-2.5, 0, -2.1855695e-07, 0, 2.5, 0, 2.1855695e-07, 0, -2.5, -1.5, 2, -2.2)
+
+[node name="Sketchfab_Scene2" parent="Structure" unique_id=96910071 instance=ExtResource("10_doiwj")]
+transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 4, 2, 1)
+
+[node name="Sketchfab_Scene3" parent="Structure" unique_id=1698141093 instance=ExtResource("11_2irhw")]
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, 4, 0, 0)
+
+[node name="SlidingDoors" type="Node3D" parent="Structure" unique_id=423249916]
+script = ExtResource("13_2irhw")
+
+[node name="Rightdoor" type="MeshInstance3D" parent="Structure/SlidingDoors" unique_id=856397082]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2, -2.5)
+mesh = SubResource("BoxMesh_omq3p")
+surface_material_override/0 = SubResource("StandardMaterial3D_t1lkq")
+
+[node name="Leftdoor" type="MeshInstance3D" parent="Structure/SlidingDoors" unique_id=1342595497]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2, 0.5)
+mesh = SubResource("BoxMesh_omq3p")
+surface_material_override/0 = SubResource("StandardMaterial3D_53wbm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Structure/SlidingDoors" unique_id=1801902584]
+libraries/ = SubResource("AnimationLibrary_n802c")
+
+[node name="Slidingdoorbutton" type="Node3D" parent="Structure" unique_id=858345078 node_paths=PackedStringArray("door")]
+script = ExtResource("14_llc1v")
+door = NodePath("../SlidingDoors")
+
+[node name="Area3D" type="Area3D" parent="Structure/Slidingdoorbutton" unique_id=1653313071]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3, 2.4, -1.4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Structure/Slidingdoorbutton/Area3D" unique_id=1273527640]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.099, 1, -1.7)
+shape = SubResource("BoxShape3D_spyda")
+debug_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Structure/Slidingdoorbutton/Area3D" unique_id=1546495023]
+transform = Transform3D(-4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 0, 0, 10, 0, 1, 0)
+mesh = SubResource("CylinderMesh_01y1c")
+
+[node name="Hallwaypart" type="Node3D" parent="Structure" unique_id=579335652]
+
+[node name="Hallway" type="MeshInstance3D" parent="Structure/Hallwaypart" unique_id=106676302]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 2, 0)
+mesh = SubResource("BoxMesh_jv8vb")
+surface_material_override/0 = SubResource("StandardMaterial3D_rdpry")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Structure/Hallwaypart" unique_id=1230653325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 4, -2)
+light_color = Color(1, 0.15686275, 0.15686275, 1)
+light_energy = 7.737
+omni_range = 21.514
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Structure/Hallwaypart" unique_id=1279372125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 4, 2)
+light_color = Color(1, 0.15686275, 0.15686275, 1)
+light_energy = 7.737
+omni_range = 21.514
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Structure/Hallwaypart" unique_id=708470740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+mesh = SubResource("BoxMesh_rdpry")
+surface_material_override/0 = SubResource("StandardMaterial3D_rm8ty")
+
+[node name="Camerapivot" type="Node3D" parent="." unique_id=513757277]
+script = ExtResource("10_b7mk8")
+
+[node name="Camera3D" type="Camera3D" parent="Camerapivot" unique_id=709463008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=946834207]
+transform = Transform3D(0.8660254, 0.38302222, -0.32139382, 0, 0.64278764, 0.76604444, 0.5, -0.66341394, 0.5566704, 0, 0, 0)
+
+[node name="lg_gaming_monitor__low_poly__game_ready" parent="." unique_id=1723322272 instance=ExtResource("13_llc1v")]
+transform = Transform3D(-0.046984635, 0, 0.017101012, 0, 0.05, 0, -0.017101012, 0, -0.046984635, 0.8, 1.7, -1)
+
+[node name="hp_laptop_low_poly__game_ready_3d_model" parent="." unique_id=147111707 instance=ExtResource("14_7qjpn")]
+transform = Transform3D(0.34641016, 0, 0.2, 0, 0.4, 0, -0.2, 0, 0.34641016, -0.5, 1.61, -1)
+
+[node name="Sketchfab_Scene" parent="." unique_id=1786845423 instance=ExtResource("15_n802c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 1, -2.5)
+
+[node name="Emergencylight" type="OmniLight3D" parent="." unique_id=337946215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -0.5)
+light_color = Color(1, 0.15686275, 0.15686275, 1)
+light_energy = 3.088
+shadow_enabled = true
+omni_range = 3.227
+
+[node name="Emergencylight2" type="OmniLight3D" parent="." unique_id=1261080065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -2.5)
+light_color = Color(1, 0.15686275, 0.15686275, 1)
+light_energy = 3.088
+shadow_enabled = true
+omni_range = 3.227
+
+[node name="Emergencylight3" type="OmniLight3D" parent="." unique_id=904934287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, -2.5)
+light_color = Color(1, 0.79607844, 0.15686275, 1)
+light_energy = 0.281
+shadow_enabled = true
+omni_range = 1.556
+
+[node name="ComputerUI" parent="." unique_id=1537856874 instance=ExtResource("21_dnkox")]
+visible = false
+custom_minimum_size = Vector2(700, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -200.0
+offset_right = 350.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Background" type="ColorRect" parent="ComputerUI" unique_id=12143881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mainmenu" type="VBoxContainer" parent="ComputerUI" unique_id=2132473235]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="Energybutton" type="Button" parent="ComputerUI/Mainmenu" unique_id=1835646632]
+layout_mode = 2
+
+[node name="Camerabutton" type="Button" parent="ComputerUI/Mainmenu" unique_id=719228034]
+layout_mode = 2
+
+[node name="Antenabutton" type="Button" parent="ComputerUI/Mainmenu" unique_id=274308480]
+layout_mode = 2
+
+[connection signal="input_event" from="Structure/Slidingdoorbutton/Area3D" to="Structure/Slidingdoorbutton" method="_on_area_3d_input_event"]

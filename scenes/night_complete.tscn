@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b8l478owqxduj"]
+
+[ext_resource type="Script" uid="uid://cs15fpwiswbjp" path="res://scenes/night_complete.gd" id="1_0t3km"]
+[ext_resource type="Texture2D" uid="uid://bnjqr03ja6236" path="res://backgrounds/WhatsApp Image 2026-07-11 at 18.06.31.jpeg" id="2_h2gd2"]
+
+[node name="NightComplete" type="Control" unique_id=640770899]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0t3km")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=833528895]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 1241.0
+offset_bottom = 685.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h2gd2")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1722320994]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.043137256, 0.06666667, 0.09411765, 0.8901961)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=939164387]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer" unique_id=1556204656]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1808029846]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "NOITE 1 CONCLUÍDA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shift" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=951652426]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Turno enecerrado"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=654733632]
+layout_mode = 2
+
+[node name="ReportLabel" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=942003665]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "RELATÓRIO DO OPERADOR
+Energia restante:
+84%
+Protocolos concluídos:
+2 / 2
+Tempo de serviço:
+1h 00min"
+
+[node name="Nextstep" type="Button" parent="." unique_id=134305430]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 575.0
+offset_right = 988.0
+offset_bottom = 638.0
+theme_override_colors/font_color = Color(0.21003157, 0.8144945, 0.026349468, 1)
+theme_override_font_sizes/font_size = 40
+text = "PRÓXIMA NOITE"

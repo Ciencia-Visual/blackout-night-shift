@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dnsiydx54qegg"]
+
+[ext_resource type="Texture2D" uid="uid://gb4jqjai3ap5" path="res://assets/grid/cell_texture.png" id="1_blqci"]
+[ext_resource type="Script" uid="uid://mgwieisddjqd" path="res://scenes/circuit_puzzle/slot_inventory.gd" id="1_jly6o"]
+
+[node name="Slot1" type="TextureButton" unique_id=1119390294]
+custom_minimum_size = Vector2(64, 92)
+size_flags_horizontal = 0
+script = ExtResource("1_jly6o")
+
+[node name="Background" type="TextureRect" parent="." unique_id=650288859]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 92.0
+texture = ExtResource("1_blqci")
+
+[node name="Item" type="TextureRect" parent="." unique_id=364477712]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.897495
+offset_top = 13.0
+offset_right = 23.897495
+offset_bottom = 66.70604
+grow_horizontal = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=110417844]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1

@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://blkxhfdxjp2uo"]
+
+[ext_resource type="Script" uid="uid://c52v4jrjtij6k" path="res://scenes/protocols/generator_popup.gd" id="1_4gabe"]
+[ext_resource type="StyleBox" uid="uid://cnjmwflrfde6g" path="res://resources/popup/styles_container.tres" id="1_wdyx1"]
+[ext_resource type="Texture2D" uid="uid://gvir1t04bokf" path="res://assets/icon-close.svg" id="3_ycysv"]
+[ext_resource type="StyleBox" uid="uid://dh2q6sswn27on" path="res://resources/popup/styles_content.tres" id="4_dvn78"]
+[ext_resource type="PackedScene" uid="uid://bmb1nb6bkx0yp" path="res://scenes/circuit_puzzle/puzzle.tscn" id="5_dvn78"]
+[ext_resource type="Script" uid="uid://exmr3ku78duh" path="res://scenes/protocols/popup_close.gd" id="6_jj6ly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jj6ly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oafs0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m716r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xflv8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_74hxg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5klcp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u12bn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qe1m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kcjr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q5x5b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lp5pt"]
+
+[node name="GeneratorPopup" type="Panel" unique_id=352521375 node_paths=PackedStringArray("slot_label", "wire_button", "switch_button", "resistor_button", "question", "puzzle")]
+custom_minimum_size = Vector2(650, 492)
+offset_right = 650.0
+offset_bottom = 492.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_wdyx1")
+script = ExtResource("1_4gabe")
+slot_label = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow/SlotLabel")
+wire_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/WireButton")
+switch_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/SwitchButton")
+resistor_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/ResistorButton")
+question = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question")
+puzzle = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Puzzle")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1224614480]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1731183867]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleWindow" type="Label" parent="MarginContainer/VBoxContainer2" unique_id=1356499786]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Gerador"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonClose" type="Button" parent="MarginContainer/VBoxContainer2/TitleWindow" unique_id=488181682]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jj6ly")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oafs0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_m716r")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_xflv8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_74hxg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5klcp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u12bn")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8qe1m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5kcjr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_q5x5b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lp5pt")
+icon = ExtResource("3_ycysv")
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer2" unique_id=166997194]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("4_dvn78")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer2/Panel" unique_id=252287697]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Question" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer" unique_id=1514759191]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="MainVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question" unique_id=701034170]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/MainVBox" unique_id=1341146039]
+layout_mode = 2
+text = "PROTOCOLO PR-002"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/MainVBox" unique_id=901008606]
+layout_mode = 2
+text = "O circuito do gerador foi interrompido.
+Complete o circuito."
+horizontal_alignment = 1
+
+[node name="CircuitRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question" unique_id=1279346792]
+layout_mode = 2
+alignment = 1
+
+[node name="Battery" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=80840007]
+layout_mode = 2
+text = "🔋"
+
+[node name="Wire" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=1813040286]
+layout_mode = 2
+text = "────────"
+
+[node name="SlotLabel" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=1559013062]
+layout_mode = 2
+text = "□"
+
+[node name="Wire2" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=1392446980]
+layout_mode = 2
+text = "────────"
+
+[node name="Lamp" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=945882253]
+layout_mode = 2
+text = "💡"
+
+[node name="PiecesRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question" unique_id=1011074839]
+layout_mode = 2
+alignment = 1
+
+[node name="WireButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow" unique_id=688013111]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Fio"
+
+[node name="SwitchButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow" unique_id=1170790936]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Interruptor"
+
+[node name="ResistorButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow" unique_id=1964160893]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Resistor"
+
+[node name="Puzzle" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer" unique_id=443587558 instance=ExtResource("5_dvn78")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="PopupClose" type="Node" parent="." unique_id=1358075613 node_paths=PackedStringArray("close_button")]
+script = ExtResource("6_jj6ly")
+close_button = NodePath("../MarginContainer/VBoxContainer2/TitleWindow/ButtonClose")
+metadata/_custom_type_script = "uid://exmr3ku78duh"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/WireButton" to="." method="_on_wire_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/SwitchButton" to="." method="_on_switch_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/ResistorButton" to="." method="_on_resistor_button_pressed"]

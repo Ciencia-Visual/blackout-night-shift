@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dpv6xv8e8tgpn"]
+
+[node name="ComputerUI" type="Control" unique_id=1537856874]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

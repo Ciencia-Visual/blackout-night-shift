@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://b6ygxpf6g7n0r"]
+
+[ext_resource type="Script" uid="uid://vokgsqd0bhad" path="res://scenes/start_screen.gd" id="1_ainjc"]
+[ext_resource type="Texture2D" uid="uid://du6xvhs5hi7g7" path="res://backgrounds/Startscreenback.jpeg" id="1_i8r30"]
+[ext_resource type="AudioStream" uid="uid://bxa52ywcauwui" path="res://music/luis_humanoide-the-upside-down-298541.mp3" id="3_60ddj"]
+[ext_resource type="AudioStream" uid="uid://ryxjv6yeq0dk" path="res://sounds/music/sfx/dskoll-computer-mouse-click-double-click-and-triple-click-140106.mp3" id="4_5e717"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qw60k"]
+
+[sub_resource type="Animation" id="Animation_60ddj"]
+resource_name = "FadeOut"
+length = 1.3333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5e717"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtlf8"]
+_data = {
+&"FadeOut": SubResource("Animation_60ddj"),
+&"RESET": SubResource("Animation_5e717")
+}
+
+[node name="StartScreen" type="Control" unique_id=1778631456]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ainjc")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2079209758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -3.0
+offset_right = 1245.0
+offset_bottom = 677.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i8r30")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=1601313594]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1240.0
+offset_bottom = 684.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=870516636]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 273.0
+offset_top = 100.0
+offset_right = 933.0
+offset_bottom = 560.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=21055021]
+custom_minimum_size = Vector2(700, 500)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=1206284717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1036582018]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "BLACKOUT: NIGHT SHIFT"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1804089240]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1254902, 0.54509807, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "ARGUS AI"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/Panel/VBoxContainer" unique_id=719083698]
+custom_minimum_size = Vector2(500, 350)
+layout_mode = 2
+theme_override_colors/default_color = Color(3.8263947e-06, 0.657962, 1.1551381e-06, 1)
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qw60k")
+text = "Bem-vindo, Operador.
+Você acaba de assumir o turno da noite na Subestação Blackout.
+Sua responsabilidade é manter todos os sistemas operacionais até o amanhecer.
+Durante esta noite poderão ocorrer falhas elétricas.
+Sempre que um equipamento entrar em falha:
+* Clique no equipamento destacado.
+* Execute corretamente o protocolo.
+* Evite que a energia da instalação seja esgotada.
+O ARGUS monitorará movimentações suspeitas durante todo o turno.
+Boa sorte."
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="StarterButton" type="Button" parent="." unique_id=1438288109]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 555.0
+offset_right = 715.0
+offset_bottom = 598.0
+theme_override_font_sizes/font_size = 25
+text = "INICIAR TURNO"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1172601233]
+stream = ExtResource("3_60ddj")
+autoplay = true
+
+[node name="Fade" type="ColorRect" parent="." unique_id=797276937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 1243.0
+offset_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=609605065]
+libraries/ = SubResource("AnimationLibrary_mtlf8")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=2111418522]
+stream = ExtResource("4_5e717")
+volume_db = 2.657
+
+[connection signal="pressed" from="StarterButton" to="." method="_on_starter_button_pressed"]

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cyxfp26l4na48"]
+
+[ext_resource type="Script" uid="uid://bua88b2md1p3f" path="res://scenes/circuit_puzzle/components/led.gd" id="1_auhl8"]
+[ext_resource type="Texture2D" uid="uid://cmedpm3gvp4xc" path="res://assets/components/led_off.png" id="2_auhl8"]
+[ext_resource type="Script" uid="uid://bpnqr4adqsad" path="res://scenes/circuit_puzzle/components/dragging.gd" id="3_rlrp0"]
+[ext_resource type="Script" uid="uid://b5tgjgptx603t" path="res://scenes/circuit_puzzle/components/terminais.gd" id="3_xs8mr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqlu1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlrp0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oq4pw"]
+radius = 15.0
+height = 45.85
+
+[node name="Led" type="Node2D" unique_id=1341039767]
+position = Vector2(209, 114)
+script = ExtResource("1_auhl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=961991802]
+texture = ExtResource("2_auhl8")
+
+[node name="Terminais" type="Area2D" parent="." unique_id=1503665192]
+script = ExtResource("3_xs8mr")
+
+[node name="Catodo" type="CollisionShape2D" parent="Terminais" unique_id=686305513]
+position = Vector2(11.325, 39)
+shape = SubResource("RectangleShape2D_vqlu1")
+
+[node name="Anodo" type="CollisionShape2D" parent="Terminais" unique_id=1064884345]
+position = Vector2(-15.505, 39)
+shape = SubResource("RectangleShape2D_rlrp0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=206848639]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=556649686]
+visible = false
+position = Vector2(1, -6.925)
+shape = SubResource("CapsuleShape2D_oq4pw")
+
+[node name="Dragging" type="Node2D" parent="." unique_id=1527637205 node_paths=PackedStringArray("root", "area2d_dragging")]
+script = ExtResource("3_rlrp0")
+root = NodePath("..")
+area2d_dragging = NodePath("../Area2D")
+
+[connection signal="input_event" from="Terminais" to="Terminais" method="_on_input_event"]
+[connection signal="mouse_entered" from="Terminais" to="Terminais" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Terminais" to="Terminais" method="_on_mouse_exited"]
+[connection signal="mouse_shape_entered" from="Terminais" to="Terminais" method="_on_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Terminais" to="Terminais" method="_on_mouse_shape_exited"]

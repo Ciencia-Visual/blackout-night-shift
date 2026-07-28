@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3 uid="uid://dpcr7v3wdx8ir"]
+
+[ext_resource type="Script" uid="uid://b80t42kbwxow7" path="res://resources/circuit_puzzles/componentes/component_data.gd" id="1_nk356"]
+[ext_resource type="Script" uid="uid://cfq0me5c3ld7" path="res://resources/circuit_puzzles/puzzles/puzzle_data.gd" id="2_505pb"]
+[ext_resource type="Resource" uid="uid://bmifplj7cmvna" path="res://resources/circuit_puzzles/componentes/led.tres" id="2_k4sn1"]
+
+[resource]
+script = ExtResource("2_505pb")
+inventory_components = Array[ExtResource("1_nk356")]([ExtResource("2_k4sn1"), null, null, null, null, null])
+metadata/_custom_type_script = "uid://cfq0me5c3ld7"

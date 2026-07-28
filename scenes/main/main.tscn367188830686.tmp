@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://d1oowqrkcr2gu"]
+
+[ext_resource type="Script" uid="uid://ba4chynsvcomg" path="res://Scenes/Main/game_manager.gd" id="1_1r6ip"]
+[ext_resource type="Script" uid="uid://cvfujosi6jnw1" path="res://Scenes/Main/main.gd" id="1_lixft"]
+[ext_resource type="Texture2D" uid="uid://dwxkq8f2g35n2" path="res://Backgrounds/control_room.jpeg" id="2_qw60k"]
+[ext_resource type="PackedScene" uid="uid://7x2ox503rvg7" path="res://Scenes/religamento_popup.tscn" id="3_xlvfx"]
+[ext_resource type="PackedScene" uid="uid://jjb8221sadb5" path="res://Scenes/Protocols/maintenancepopup.tscn" id="3_y3v7k"]
+[ext_resource type="AudioStream" uid="uid://vyrfyg62havc" path="res://Sounds/Music/SFX/donrain-rain-on-the-window-114709.mp3" id="4_p6jpk"]
+[ext_resource type="AudioStream" uid="uid://bxa52ywcauwui" path="res://Music/luis_humanoide-the-upside-down-298541.mp3" id="5_2a143"]
+[ext_resource type="AudioStream" uid="uid://b8no5ipc780yc" path="res://Sounds/Music/SFX/ragecore29-vintage-monitor-smashed-sound-495844.mp3" id="6_2a143"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyda"]
+bg_color = Color(0.07058824, 0.08627451, 0.10980392, 0.8509804)
+border_color = Color(0.15686275, 0.47058824, 0.27450982, 1)
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyvnd"]
+font_color = Color(0.7058824, 1, 0.7058824, 1)
+shadow_color = Color(0, 0, 0, 0.8666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01y1c"]
+bg_color = Color(0.07058824, 0.08627451, 0.10980392, 0.8862745)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.93333334, 0.7137255, 0, 1)
+corner_detail = 10
+
+[node name="Main" type="Control" unique_id=420138955]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lixft")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1424598140]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -18.0
+offset_right = 44.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qw60k")
+
+[node name="HUD" type="Control" parent="." unique_id=681254730]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" type="Panel" parent="HUD" unique_id=523143632]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_right = 1241.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="HUD/Header" unique_id=1973938867]
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BLACKOUT: NIGHTSHIFT"
+
+[node name="NightLabel" type="Label" parent="HUD/Header" unique_id=20827364]
+custom_minimum_size = Vector2(1080, 45)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1100.0
+offset_top = 45.0
+offset_right = 2180.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Noite 1"
+
+[node name="Timelabel" type="Label" parent="HUD/Header" unique_id=1997610334]
+custom_minimum_size = Vector2(20, 45)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 45.0
+offset_right = 104.0
+offset_bottom = 90.0
+text = "Hora:  00:00"
+
+[node name="EnergyLabel" type="Label" parent="HUD/Header" unique_id=799633385]
+custom_minimum_size = Vector2(520, 45)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 450.0
+offset_top = 45.0
+offset_right = 970.0
+offset_bottom = 90.0
+text = "Energia:100%"
+
+[node name="NorthPanelButton" type="Button" parent="HUD" unique_id=1977014523]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 369.0
+offset_right = 962.0
+offset_bottom = 400.0
+text = "PAINEL NORTE"
+
+[node name="SecurityMonitor" type="Panel" parent="HUD" unique_id=1107529904]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 530.0
+offset_right = 1273.0
+offset_bottom = 650.0
+
+[node name="SecurityLabel" type="Label" parent="HUD/SecurityMonitor" unique_id=990263709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_spyda")
+text = "MONITOR DE SEGURANÇA
+
+STATUS:
+
+Nenhum movimento
+detectado."
+label_settings = SubResource("LabelSettings_jyvnd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GeneratorButton" type="Button" parent="HUD" unique_id=136257756]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 216.0
+offset_right = 1159.0
+offset_bottom = 247.0
+text = "🟢 GERADOR ONLINE"
+
+[node name="Popups" type="Control" parent="." unique_id=664464720]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Northpanelpopup" parent="Popups" unique_id=1028323914 instance=ExtResource("3_y3v7k")]
+
+[node name="GeneratorPopup" type="AcceptDialog" parent="Popups" unique_id=1773629582]
+oversampling_override = 1.0
+title = ""
+initial_position = 2
+size = Vector2i(650, 420)
+dialog_hide_on_ok = false
+dialog_close_on_escape = false
+
+[node name="MainVBox" type="VBoxContainer" parent="Popups/GeneratorPopup" unique_id=213581403]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="TitleLabel" type="Label" parent="Popups/GeneratorPopup/MainVBox" unique_id=1985639453]
+layout_mode = 2
+text = "PROTOCOLO PR-002"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="Popups/GeneratorPopup/MainVBox" unique_id=680624881]
+layout_mode = 2
+text = "O circuito do gerador foi interrompido.
+Complete o circuito."
+horizontal_alignment = 1
+
+[node name="CircuitRow" type="HBoxContainer" parent="Popups/GeneratorPopup/MainVBox" unique_id=615172593]
+layout_mode = 2
+alignment = 1
+
+[node name="Battery" type="Label" parent="Popups/GeneratorPopup/MainVBox/CircuitRow" unique_id=222296252]
+layout_mode = 2
+text = "🔋"
+
+[node name="Wire" type="Label" parent="Popups/GeneratorPopup/MainVBox/CircuitRow" unique_id=440552461]
+layout_mode = 2
+text = "────────"
+
+[node name="SlotLabel" type="Label" parent="Popups/GeneratorPopup/MainVBox/CircuitRow" unique_id=524395713]
+layout_mode = 2
+text = "□"
+
+[node name="Wire2" type="Label" parent="Popups/GeneratorPopup/MainVBox/CircuitRow" unique_id=1663401579]
+layout_mode = 2
+text = "────────"
+
+[node name="Lamp" type="Label" parent="Popups/GeneratorPopup/MainVBox/CircuitRow" unique_id=383970893]
+layout_mode = 2
+text = "💡"
+
+[node name="PiecesRow" type="HBoxContainer" parent="Popups/GeneratorPopup/MainVBox" unique_id=681429169]
+layout_mode = 2
+alignment = 1
+
+[node name="WireButton" type="Button" parent="Popups/GeneratorPopup/MainVBox/PiecesRow" unique_id=1306670743]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Fio"
+
+[node name="SwitchButton" type="Button" parent="Popups/GeneratorPopup/MainVBox/PiecesRow" unique_id=1040910064]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Interruptor"
+
+[node name="ResistorButton" type="Button" parent="Popups/GeneratorPopup/MainVBox/PiecesRow" unique_id=1671493693]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Resistor"
+
+[node name="ReligamentoPopup" parent="Popups" unique_id=100306170 instance=ExtResource("3_xlvfx")]
+visible = false
+layout_mode = 1
+
+[node name="AlertPanel" type="Panel" parent="." unique_id=80050218]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -212.0
+offset_right = 272.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_01y1c")
+
+[node name="AlertLabel" type="Label" parent="AlertPanel" unique_id=654877694]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "⚠️ NOVA OCORRÊNCIA
+
+Falha detectada
+no Painel
+
+Clique no painel
+para iniciar o protocolo."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Managers" type="Node" parent="." unique_id=183515664]
+
+[node name="GameManager" type="Node" parent="Managers" unique_id=1016078995]
+script = ExtResource("1_1r6ip")
+
+[node name="RobotManager" type="Node" parent="Managers" unique_id=397020687]
+
+[node name="AudioManager" type="Node" parent="Managers" unique_id=1819402590]
+
+[node name="PowerManager" type="Node" parent="Managers" unique_id=412772614]
+
+[node name="Robots" type="Node" parent="." unique_id=139711833]
+
+[node name="AmbientSound" type="AudioStreamPlayer" parent="." unique_id=1462484482]
+stream = ExtResource("4_p6jpk")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=235790246]
+stream = ExtResource("5_2a143")
+volume_db = -12.0
+autoplay = true
+
+[node name="ProtocolSound" type="AudioStreamPlayer" parent="." unique_id=2021531976]
+stream = ExtResource("6_2a143")
+
+[connection signal="pressed" from="HUD/NorthPanelButton" to="." method="_on_north_panel_button_pressed"]
+[connection signal="pressed" from="HUD/GeneratorButton" to="." method="_on_generator_button_pressed"]
+[connection signal="pressed" from="Popups/GeneratorPopup/MainVBox/PiecesRow/WireButton" to="." method="_on_wire_button_pressed"]
+[connection signal="pressed" from="Popups/GeneratorPopup/MainVBox/PiecesRow/SwitchButton" to="." method="_on_switch_button_pressed"]
+[connection signal="pressed" from="Popups/GeneratorPopup/MainVBox/PiecesRow/ResistorButton" to="." method="_on_resistor_button_pressed"]
