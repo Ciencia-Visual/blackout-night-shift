@@ -10,7 +10,7 @@ signal peca_errada
 @export var switch_button : Button
 @export var resistor_button : Button
 @export var question: Control
-@export var puzzle: Puzzle
+@export var puzzle: Control
 
 
 func iniciar_protocolo():

@@ -43,7 +43,7 @@ wire_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Que
 switch_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/SwitchButton")
 resistor_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/ResistorButton")
 question = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question")
-puzzle = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/MarginContainer/Puzzle")
+puzzle = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/MarginContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1224614480]
 layout_mode = 1
@@ -178,11 +178,11 @@ theme_override_font_sizes/font_size = 20
 text = "Resistor"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer" unique_id=1237416033]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 157
 
 [node name="Puzzle" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/MarginContainer" unique_id=443587558 instance=ExtResource("5_dvn78")]
-visible = false
 layout_mode = 2
 
 [node name="PopupClose" type="Node" parent="." unique_id=1358075613 node_paths=PackedStringArray("close_button")]
