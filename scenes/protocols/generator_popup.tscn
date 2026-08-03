@@ -38,11 +38,11 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("1_wdyx1")
 script = ExtResource("1_4gabe")
-slot_label = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow/SlotLabel")
-wire_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/WireButton")
-switch_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/SwitchButton")
-resistor_button = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/ResistorButton")
-question = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/Question")
+slot_label = NodePath("MarginContainer/VBoxContainer2/Panel/Question/CircuitRow/SlotLabel")
+wire_button = NodePath("MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/WireButton")
+switch_button = NodePath("MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/SwitchButton")
+resistor_button = NodePath("MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/ResistorButton")
+question = NodePath("MarginContainer/VBoxContainer2/Panel/Question")
 puzzle = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/MarginContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1224614480]
@@ -98,13 +98,100 @@ size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("4_dvn78")
 
+[node name="Question" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/Panel" unique_id=1514759191]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.0
+offset_top = -104.5
+offset_right = 277.0
+offset_bottom = 104.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="MainVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/Question" unique_id=701034170]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer2/Panel/Question/MainVBox" unique_id=1341146039]
+layout_mode = 2
+text = "PROTOCOLO PR-002"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer2/Panel/Question/MainVBox" unique_id=901008606]
+layout_mode = 2
+text = "O circuito do gerador foi interrompido.
+Complete o circuito."
+horizontal_alignment = 1
+
+[node name="CircuitRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/Question" unique_id=1279346792]
+layout_mode = 2
+alignment = 1
+
+[node name="Battery" type="Label" parent="MarginContainer/VBoxContainer2/Panel/Question/CircuitRow" unique_id=80840007]
+layout_mode = 2
+text = "🔋"
+
+[node name="Wire" type="Label" parent="MarginContainer/VBoxContainer2/Panel/Question/CircuitRow" unique_id=1813040286]
+layout_mode = 2
+text = "────────"
+
+[node name="SlotLabel" type="Label" parent="MarginContainer/VBoxContainer2/Panel/Question/CircuitRow" unique_id=1559013062]
+layout_mode = 2
+text = "□"
+
+[node name="Wire2" type="Label" parent="MarginContainer/VBoxContainer2/Panel/Question/CircuitRow" unique_id=1392446980]
+layout_mode = 2
+text = "────────"
+
+[node name="Lamp" type="Label" parent="MarginContainer/VBoxContainer2/Panel/Question/CircuitRow" unique_id=945882253]
+layout_mode = 2
+text = "💡"
+
+[node name="PiecesRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/Question" unique_id=1011074839]
+layout_mode = 2
+alignment = 1
+
+[node name="WireButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/Question/PiecesRow" unique_id=688013111]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Fio"
+
+[node name="SwitchButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/Question/PiecesRow" unique_id=1170790936]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Interruptor"
+
+[node name="ResistorButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/Question/PiecesRow" unique_id=1964160893]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Resistor"
+
+[node name="Puzzle" parent="MarginContainer/VBoxContainer2/Panel" unique_id=443587558 instance=ExtResource("5_dvn78")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -201.5
+offset_right = 311.0
+offset_bottom = 201.5
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer2/Panel" unique_id=252287697]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -98.5
-offset_right = 98.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -112,84 +199,17 @@ theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
-metadata/_edit_use_anchors_ = true
-
-[node name="Question" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer" unique_id=1514759191]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 30
-
-[node name="MainVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question" unique_id=701034170]
-layout_mode = 2
-
-[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/MainVBox" unique_id=1341146039]
-layout_mode = 2
-text = "PROTOCOLO PR-002"
-horizontal_alignment = 1
-
-[node name="Description" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/MainVBox" unique_id=901008606]
-layout_mode = 2
-text = "O circuito do gerador foi interrompido.
-Complete o circuito."
-horizontal_alignment = 1
-
-[node name="CircuitRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question" unique_id=1279346792]
-layout_mode = 2
-alignment = 1
-
-[node name="Battery" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=80840007]
-layout_mode = 2
-text = "🔋"
-
-[node name="Wire" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=1813040286]
-layout_mode = 2
-text = "────────"
-
-[node name="SlotLabel" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=1559013062]
-layout_mode = 2
-text = "□"
-
-[node name="Wire2" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=1392446980]
-layout_mode = 2
-text = "────────"
-
-[node name="Lamp" type="Label" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/CircuitRow" unique_id=945882253]
-layout_mode = 2
-text = "💡"
-
-[node name="PiecesRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question" unique_id=1011074839]
-layout_mode = 2
-alignment = 1
-
-[node name="WireButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow" unique_id=688013111]
-custom_minimum_size = Vector2(120, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Fio"
-
-[node name="SwitchButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow" unique_id=1170790936]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Interruptor"
-
-[node name="ResistorButton" type="Button" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow" unique_id=1964160893]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Resistor"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer" unique_id=1237416033]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_left = 157
-
-[node name="Puzzle" parent="MarginContainer/VBoxContainer2/Panel/MarginContainer/MarginContainer" unique_id=443587558 instance=ExtResource("5_dvn78")]
-layout_mode = 2
+theme_override_constants/margin_left = 154
 
 [node name="PopupClose" type="Node" parent="." unique_id=1358075613 node_paths=PackedStringArray("close_button")]
 script = ExtResource("6_jj6ly")
 close_button = NodePath("../MarginContainer/VBoxContainer2/TitleWindow/ButtonClose")
 metadata/_custom_type_script = "uid://exmr3ku78duh"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/WireButton" to="." method="_on_wire_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/SwitchButton" to="." method="_on_switch_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/MarginContainer/Question/PiecesRow/ResistorButton" to="." method="_on_resistor_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/WireButton" to="." method="_on_wire_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/SwitchButton" to="." method="_on_switch_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/ResistorButton" to="." method="_on_resistor_button_pressed"]

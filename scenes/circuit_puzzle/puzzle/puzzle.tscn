@@ -5,11 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://bchy4gfamjcss" path="res://scenes/circuit_puzzle/components/energy_source_banana.tscn" id="3_pkujb"]
 [ext_resource type="PackedScene" uid="uid://dnsiydx54qegg" path="res://scenes/circuit_puzzle/ui/slot_inventory.tscn" id="4_2fiqm"]
 
-[node name="Puzzle" type="HBoxContainer" unique_id=443587558 node_paths=PackedStringArray("grid_container", "work_space", "wires")]
+[node name="Puzzle" type="VBoxContainer" unique_id=1921221832 node_paths=PackedStringArray("grid_container", "work_space", "wires")]
+propagate_maximum_size = false
 offset_right = 622.0
-offset_bottom = 368.0
+offset_bottom = 429.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 mouse_filter = 2
-theme_override_constants/separation = 30
 script = ExtResource("1_3d3j4")
 grid_container = NodePath("HBoxContainer/Inventory/GridContainer")
 work_space = NodePath("HBoxContainer/WorkSpace")
@@ -78,17 +80,23 @@ layout_mode = 2
 [node name="Slot8" parent="HBoxContainer/Inventory/GridContainer" unique_id=1464409829 instance=ExtResource("4_2fiqm")]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2144239229]
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=307582061]
+propagate_maximum_size = false
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="adjacency_list()" type="Button" parent="VBoxContainer" unique_id=483720032]
+custom_minimum_size = Vector2(125, 31)
 layout_mode = 2
 text = "adjacency_list()"
 
 [node name="edge_list()" type="Button" parent="VBoxContainer" unique_id=1734872178]
+custom_minimum_size = Vector2(125, 31)
 layout_mode = 2
 text = "edge_list()"
 
 [node name="edge_dfs()" type="Button" parent="VBoxContainer" unique_id=1918507415]
+custom_minimum_size = Vector2(125, 31)
 layout_mode = 2
 text = "edge_dfs()"
