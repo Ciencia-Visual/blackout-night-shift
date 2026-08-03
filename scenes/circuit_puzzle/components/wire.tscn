@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cerrwh75o525j"]
+
+[ext_resource type="Script" uid="uid://do875xllii8ln" path="res://scenes/circuit_puzzle/components/wire.gd" id="1_a6lcg"]
+
+[node name="Wire" type="Node2D" unique_id=477967423]
+script = ExtResource("1_a6lcg")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=870389026]
+points = PackedVector2Array(350, 94, 475, 179, 936, 148)
+width = 6.0
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true

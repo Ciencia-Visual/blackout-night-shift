@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ciop0g36ktym"]
+
+[ext_resource type="Script" uid="uid://c7b1qruialpto" path="res://scenes/teste/connection.gd" id="1_dgy50"]
+[ext_resource type="PackedScene" uid="uid://b5yrknvtpuk7q" path="res://scenes/teste/terminal.tscn" id="2_inc41"]
+
+[node name="Conection" type="Node2D" unique_id=2023698079]
+script = ExtResource("1_dgy50")
+
+[node name="TerminalStart" parent="." unique_id=1217168245 instance=ExtResource("2_inc41")]
+position = Vector2(152, 104)
+
+[node name="TerminalA" parent="." unique_id=1299063287 instance=ExtResource("2_inc41")]
+position = Vector2(324, 104)
+
+[node name="TerminalB" parent="." unique_id=2038881694 instance=ExtResource("2_inc41")]
+position = Vector2(481, 107)
+
+[node name="TerminalC" parent="." unique_id=980409753 instance=ExtResource("2_inc41")]
+position = Vector2(626, 112)
+
+[node name="TerminalD" parent="." unique_id=229995014 instance=ExtResource("2_inc41")]
+position = Vector2(489, 203)
+
+[node name="Wires" type="Node2D" parent="." unique_id=1491711839]
+
+[node name="Label" type="Label" parent="." unique_id=994422340]
+offset_left = 92.0
+offset_top = 63.0
+offset_right = 222.0
+offset_bottom = 86.0
+text = "Fonte de energia"
+
+[node name="Label2" type="Label" parent="." unique_id=1489408065]
+offset_left = 280.0
+offset_top = 64.0
+offset_right = 364.0
+offset_bottom = 87.0
+text = "Terminal A"
+
+[node name="Label3" type="Label" parent="." unique_id=1087822056]
+offset_left = 438.0
+offset_top = 66.0
+offset_right = 522.0
+offset_bottom = 89.0
+text = "Terminal B"
+
+[node name="Label4" type="Label" parent="." unique_id=76720082]
+offset_left = 575.0
+offset_top = 65.0
+offset_right = 659.0
+offset_bottom = 88.0
+text = "Terminal C"
+
+[node name="Label5" type="Label" parent="." unique_id=23174860]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 446.0
+offset_top = 165.0
+offset_right = 530.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Terminal D"
+
+[node name="adjacency_list()" type="Button" parent="." unique_id=844813943]
+offset_left = 65.0
+offset_top = 313.0
+offset_right = 212.0
+offset_bottom = 344.0
+text = "adjacency_list()"
+
+[node name="edge_list()" type="Button" parent="." unique_id=823147837]
+offset_left = 280.0
+offset_top = 312.0
+offset_right = 427.0
+offset_bottom = 343.0
+text = "edge_list()"
+
+[node name="edge_dfs()" type="Button" parent="." unique_id=180147680]
+offset_left = 467.0
+offset_top = 310.0
+offset_right = 614.0
+offset_bottom = 341.0
+text = "edge_dfs()"

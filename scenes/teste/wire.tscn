@@ -1,14 +1,8 @@
-[gd_scene format=3 uid="uid://0n6b8263k0o7"]
+[gd_scene format=3 uid="uid://dd7q5hhvo7lpq"]
 
-[ext_resource type="Script" uid="uid://dvpdtduml51k6" path="res://scenes/teste/wire.gd" id="1_htmg6"]
+[ext_resource type="Script" uid="uid://bkpkjp7hg0l6y" path="res://scenes/teste/wire.gd" id="1_nyhry"]
 
-[node name="Node2D" type="Node2D" unique_id=1301157320]
-script = ExtResource("1_htmg6")
+[node name="Wire" type="Node2D" unique_id=477967423]
+script = ExtResource("1_nyhry")
 
-[node name="Line2D" type="Line2D" parent="." unique_id=1193388007]
-points = PackedVector2Array(365, 89, 553, 351, 949, 191)
-width = 6.0
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-antialiased = true
+[node name="Line2D" type="Line2D" parent="." unique_id=870389026]

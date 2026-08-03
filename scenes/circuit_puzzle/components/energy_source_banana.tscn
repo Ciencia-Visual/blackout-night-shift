@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bchy4gfamjcss"]
+
+[ext_resource type="Script" uid="uid://bih3a5d4tj8c1" path="res://scenes/circuit_puzzle/components/energy_source.gd" id="1_a212t"]
+[ext_resource type="Texture2D" uid="uid://opmtpa84h0in" path="res://assets/components/energy_source_banana.png" id="1_gtn6o"]
+[ext_resource type="PackedScene" uid="uid://mejb74brw3kg" path="res://scenes/circuit_puzzle/components/terminal.tscn" id="3_a212t"]
+
+[node name="EnergySourceBanana" type="Node2D" unique_id=878712388 node_paths=PackedStringArray("terminals")]
+script = ExtResource("1_a212t")
+component_name = "Energy Souce"
+drag = false
+terminals = [NodePath("Positivo"), NodePath("Negativo")]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1686086699]
+position = Vector2(71, 0)
+texture = ExtResource("1_gtn6o")
+
+[node name="Positivo" parent="." unique_id=1217168245 instance=ExtResource("3_a212t")]
+position = Vector2(91, -23)
+text_label = "Positivo"
+
+[node name="Negativo" parent="." unique_id=339335382 instance=ExtResource("3_a212t")]
+position = Vector2(91, 16)
+text_label = "Negativo"

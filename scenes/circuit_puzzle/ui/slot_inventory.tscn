@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnsiydx54qegg"]
 
 [ext_resource type="Texture2D" uid="uid://gb4jqjai3ap5" path="res://assets/grid/cell_texture.png" id="1_blqci"]
-[ext_resource type="Script" uid="uid://mgwieisddjqd" path="res://scenes/circuit_puzzle/slot_inventory.gd" id="1_jly6o"]
+[ext_resource type="Script" uid="uid://mgwieisddjqd" path="res://scenes/circuit_puzzle/ui/slot_inventory.gd" id="1_jly6o"]
 
 [node name="Slot1" type="TextureButton" unique_id=1119390294]
 custom_minimum_size = Vector2(64, 92)

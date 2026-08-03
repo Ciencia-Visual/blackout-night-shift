@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://mejb74brw3kg"]
+
+[ext_resource type="Script" uid="uid://bj4yaifruyus1" path="res://scenes/circuit_puzzle/components/terminal.gd" id="1_uewhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxk23"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vx0mm"]
+bg_color = Color(0.03137255, 0.09411765, 0.29803923, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Terminal" type="Node2D" unique_id=1217168245]
+script = ExtResource("1_uewhn")
+text_label = "Terminal 1"
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1216453419]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1573707474]
+shape = SubResource("RectangleShape2D_mxk23")
+
+[node name="Label" type="Label" parent="." unique_id=896305274]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = -52.0
+offset_right = 50.0
+offset_bottom = -22.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vx0mm")
+text = "Terminal A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="Label" unique_id=1880681469]
+position = Vector2(45, 30)
+color = Color(0.03137255, 0.09411765, 0.29803923, 0.8)
+polygon = PackedVector2Array(0, 0, 10, 0, 5, 5)
+
+[connection signal="mouse_shape_entered" from="Area2D" to="." method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Area2D" to="." method="_on_area_2d_mouse_shape_exited"]

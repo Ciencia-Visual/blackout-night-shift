@@ -2,18 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bua88b2md1p3f" path="res://scenes/circuit_puzzle/components/led.gd" id="1_auhl8"]
 [ext_resource type="Texture2D" uid="uid://cmedpm3gvp4xc" path="res://assets/components/led_off.png" id="2_auhl8"]
-[ext_resource type="PackedScene" uid="uid://mejb74brw3kg" path="res://scenes/circuit_puzzle/components/terminal.tscn" id="3_k2uio"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oq4pw"]
 radius = 21.0
 height = 66.0
 
-[node name="Led" type="Node2D" unique_id=1341039767 node_paths=PackedStringArray("hitbox_drag", "terminals")]
+[node name="Led" type="Node2D" unique_id=1341039767 node_paths=PackedStringArray("hitbox_drag")]
 z_index = 2
+position = Vector2(158, 104)
 script = ExtResource("1_auhl8")
 component_name = "LED"
 hitbox_drag = NodePath("Hitbox")
-terminals = [NodePath("Anodo"), NodePath("Catodo")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=961991802]
 texture = ExtResource("2_auhl8")
@@ -23,11 +22,3 @@ position = Vector2(1, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=556649686]
 shape = SubResource("CapsuleShape2D_oq4pw")
-
-[node name="Anodo" parent="." unique_id=1217168245 instance=ExtResource("3_k2uio")]
-position = Vector2(-15, 38)
-text_label = "Anodo"
-
-[node name="Catodo" parent="." unique_id=1012337611 instance=ExtResource("3_k2uio")]
-position = Vector2(12, 38)
-text_label = "Catodo"

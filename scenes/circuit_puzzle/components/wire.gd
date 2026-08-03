@@ -1,13 +1,13 @@
 extends Node2D
-class_name Wire_
+class_name Wire
 
 const ITERATIONS := 3
 
 @onready var line: Line2D = $Line2D
 
 
-var terminal_a: Terminal_
-var terminal_b: Terminal_
+var terminal_a: Terminal
+var terminal_b: Terminal
 
 var corners: Array[Vector2] = []
 
@@ -18,16 +18,16 @@ var finished := false
 
 func _ready() -> void:
 	add_to_group("wires")
-
 	
-func get_other_terminal(terminal: Terminal_) -> Terminal_:
+	
+func get_other_terminal(terminal: Terminal) -> Terminal:
 	if terminal == terminal_a:
 		return terminal_b
 	
 	return terminal_a
 
 
-func initialize(start: Terminal_):
+func initialize(start: Terminal):
 	finished = false
 	terminal_a = start
 	terminal_a.connected_wires.append(self)
@@ -38,7 +38,7 @@ func add_corner(point: Vector2):
 	corners.append(point)
 	update_render()
 	
-func finish(end: Terminal_):
+func finish(end: Terminal):
 	finished = true
 	terminal_b = end
 	terminal_b.connected_wires.append(self)

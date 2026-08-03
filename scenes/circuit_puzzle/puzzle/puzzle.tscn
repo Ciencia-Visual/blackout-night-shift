@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bmb1nb6bkx0yp"]
+
+[ext_resource type="Script" uid="uid://bpp342vv1dtyr" path="res://scenes/circuit_puzzle/puzzle/puzzle.gd" id="1_3d3j4"]
+[ext_resource type="Texture2D" uid="uid://crd6eei1xpp11" path="res://assets/workspace_background/background1.png" id="2_tgna8"]
+[ext_resource type="PackedScene" uid="uid://bchy4gfamjcss" path="res://scenes/circuit_puzzle/components/energy_source_banana.tscn" id="3_pkujb"]
+[ext_resource type="PackedScene" uid="uid://dnsiydx54qegg" path="res://scenes/circuit_puzzle/ui/slot_inventory.tscn" id="4_2fiqm"]
+
+[node name="Puzzle" type="HBoxContainer" unique_id=443587558 node_paths=PackedStringArray("grid_container", "work_space", "wires")]
+offset_right = 622.0
+offset_bottom = 368.0
+mouse_filter = 2
+theme_override_constants/separation = 30
+script = ExtResource("1_3d3j4")
+grid_container = NodePath("HBoxContainer/Inventory/GridContainer")
+work_space = NodePath("HBoxContainer/WorkSpace")
+wires = NodePath("HBoxContainer/WorkSpace/Wires")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=197195014]
+layout_mode = 2
+
+[node name="WorkSpace" type="BoxContainer" parent="HBoxContainer" unique_id=1812231150]
+custom_minimum_size = Vector2(0, 368)
+propagate_maximum_size = false
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/WorkSpace" unique_id=1062952012]
+custom_minimum_size = Vector2(490, 368)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("2_tgna8")
+
+[node name="EnergySourceBanana" parent="HBoxContainer/WorkSpace" unique_id=878712388 instance=ExtResource("3_pkujb")]
+position = Vector2(6, 184)
+
+[node name="Wires" type="Node2D" parent="HBoxContainer/WorkSpace" unique_id=1088921079]
+
+[node name="Inventory" type="BoxContainer" parent="HBoxContainer" unique_id=2039858797]
+custom_minimum_size = Vector2(128, 368)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/Inventory" unique_id=199127615]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Slot1" parent="HBoxContainer/Inventory/GridContainer" unique_id=1119390294 instance=ExtResource("4_2fiqm")]
+layout_mode = 2
+
+[node name="Slot2" parent="HBoxContainer/Inventory/GridContainer" unique_id=1769076056 instance=ExtResource("4_2fiqm")]
+layout_mode = 2
+
+[node name="Slot3" parent="HBoxContainer/Inventory/GridContainer" unique_id=1274092077 instance=ExtResource("4_2fiqm")]
+layout_mode = 2
+
+[node name="Slot4" parent="HBoxContainer/Inventory/GridContainer" unique_id=992973238 instance=ExtResource("4_2fiqm")]
+layout_mode = 2
+
+[node name="Slot5" parent="HBoxContainer/Inventory/GridContainer" unique_id=99505210 instance=ExtResource("4_2fiqm")]
+layout_mode = 2
+
+[node name="Slot6" parent="HBoxContainer/Inventory/GridContainer" unique_id=1688862866 instance=ExtResource("4_2fiqm")]
+layout_mode = 2
+
+[node name="Slot7" parent="HBoxContainer/Inventory/GridContainer" unique_id=1378906963 instance=ExtResource("4_2fiqm")]
+layout_mode = 2
+
+[node name="Slot8" parent="HBoxContainer/Inventory/GridContainer" unique_id=1464409829 instance=ExtResource("4_2fiqm")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2144239229]
+layout_mode = 2
+
+[node name="adjacency_list()" type="Button" parent="VBoxContainer" unique_id=483720032]
+layout_mode = 2
+text = "adjacency_list()"
+
+[node name="edge_list()" type="Button" parent="VBoxContainer" unique_id=1734872178]
+layout_mode = 2
+text = "edge_list()"
+
+[node name="edge_dfs()" type="Button" parent="VBoxContainer" unique_id=1918507415]
+layout_mode = 2
+text = "edge_dfs()"

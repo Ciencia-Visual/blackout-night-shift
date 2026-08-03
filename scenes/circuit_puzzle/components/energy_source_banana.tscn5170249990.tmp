@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bchy4gfamjcss"]
+
+[ext_resource type="Script" uid="uid://bih3a5d4tj8c1" path="res://scenes/circuit_puzzle/components/energy_source_banana.gd" id="1_a212t"]
+[ext_resource type="Texture2D" uid="uid://opmtpa84h0in" path="res://assets/components/energy_source_banana.png" id="1_gtn6o"]
+[ext_resource type="Script" uid="uid://cdidwgxql68sn" path="res://scenes/circuit_puzzle/components/terminal_overlay.gd" id="3_a212t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a212t"]
+
+[node name="EnergySourceBanana" type="Node2D" unique_id=878712388 node_paths=PackedStringArray("terminais", "draw_overlay")]
+script = ExtResource("1_a212t")
+component_name = "Energy Souce"
+terminais = NodePath("Terminais")
+drag = false
+draw_overlay = NodePath("DrawOverlay")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1686086699]
+position = Vector2(71, 0)
+texture = ExtResource("1_gtn6o")
+
+[node name="Terminais" type="Area2D" parent="." unique_id=844361956]
+
+[node name="Positivo" type="CollisionShape2D" parent="Terminais" unique_id=346566011]
+position = Vector2(93, -21)
+shape = SubResource("RectangleShape2D_a212t")
+
+[node name="Negativo" type="CollisionShape2D" parent="Terminais" unique_id=1811494760]
+position = Vector2(93, 16)
+shape = SubResource("RectangleShape2D_a212t")
+
+[node name="DrawOverlay" type="Node2D" parent="." unique_id=163922947]
+script = ExtResource("3_a212t")
+metadata/_custom_type_script = "uid://cdidwgxql68sn"
