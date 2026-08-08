@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://crd6eei1xpp11" path="res://assets/workspace_background/background1.png" id="2_tgna8"]
 [ext_resource type="PackedScene" uid="uid://bchy4gfamjcss" path="res://scenes/circuit_puzzle/components/energy_source_banana.tscn" id="3_pkujb"]
 [ext_resource type="PackedScene" uid="uid://dnsiydx54qegg" path="res://scenes/circuit_puzzle/ui/slot_inventory.tscn" id="4_2fiqm"]
-[ext_resource type="PackedScene" uid="uid://cyxfp26l4na48" path="res://scenes/circuit_puzzle/components/led.tscn" id="5_2fiqm"]
 
 [node name="Puzzle" type="VBoxContainer" unique_id=1921221832 node_paths=PackedStringArray("grid_container", "work_space", "wires")]
 propagate_maximum_size = false
@@ -36,20 +35,10 @@ size_flags_vertical = 0
 mouse_filter = 2
 texture = ExtResource("2_tgna8")
 
-[node name="EnergySourceBanana" parent="HBoxContainer/WorkSpace" unique_id=878712388 node_paths=PackedStringArray("terminals") instance=ExtResource("3_pkujb")]
+[node name="EnergySourceBanana" parent="HBoxContainer/WorkSpace" unique_id=878712388 instance=ExtResource("3_pkujb")]
 position = Vector2(6, 184)
-terminals = {
-"negativo": NodePath("Negativo"),
-"positivo": NodePath("Positivo")
-}
 
 [node name="Wires" type="Node2D" parent="HBoxContainer/WorkSpace" unique_id=1088921079]
-
-[node name="Led" parent="HBoxContainer/WorkSpace" unique_id=1341039767 node_paths=PackedStringArray("terminals") instance=ExtResource("5_2fiqm")]
-terminals = {
-"anodo": NodePath("Anodo"),
-"catodo": NodePath("Catodo")
-}
 
 [node name="Inventory" type="BoxContainer" parent="HBoxContainer" unique_id=2039858797]
 custom_minimum_size = Vector2(128, 368)

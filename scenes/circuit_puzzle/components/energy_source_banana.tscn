@@ -8,7 +8,10 @@
 script = ExtResource("1_a212t")
 component_name = "Energy Souce"
 drag = false
-terminals = [NodePath("Positivo"), NodePath("Negativo")]
+terminals = {
+"negativo": NodePath("Negativo"),
+"positivo": NodePath("Positivo")
+}
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1686086699]

@@ -9,11 +9,15 @@ radius = 21.0
 height = 66.0
 
 [node name="Led" type="Node2D" unique_id=1341039767 node_paths=PackedStringArray("hitbox_drag", "terminals")]
-z_index = 2
+position = Vector2(203, 106)
 script = ExtResource("1_auhl8")
 component_name = "LED"
 hitbox_drag = NodePath("Hitbox")
-terminals = [NodePath("Anodo"), NodePath("Catodo")]
+terminals = {
+"anodo": NodePath("Anodo"),
+"catodo": NodePath("Catodo")
+}
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=961991802]
 texture = ExtResource("2_auhl8")

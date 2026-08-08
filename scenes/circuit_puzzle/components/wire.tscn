@@ -6,7 +6,6 @@
 script = ExtResource("1_a6lcg")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=870389026]
-points = PackedVector2Array(350, 94, 475, 179, 936, 148)
 width = 6.0
 joint_mode = 2
 begin_cap_mode = 2

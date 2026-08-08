@@ -5,7 +5,7 @@ var draw_mark := false
 var mark_size_outer := Vector2(20, 20)
 var mark_size_inner := Vector2(10, 10)
 
-var connected_wires: Array[Wire] = []
+@export var connected_wires: Array[Wire] = []
 
 signal terminal_hovered(terminal: Terminal)
 signal terminal_unhovered(terminal: Terminal)
@@ -18,8 +18,8 @@ signal position_changed
 func _ready() -> void:
 	add_to_group("terminals")
 	$Label.text = text_label
-
-
+	z_index = 10
+	
 func add_wire(wire: Wire):
 	if wire not in connected_wires:
 		connected_wires.append(wire)

@@ -6,20 +6,22 @@ const ITERATIONS := 3
 @onready var line: Line2D = $Line2D
 
 
-var terminal_a: Terminal
-var terminal_b: Terminal
+@export var terminal_a: Terminal
+@export var terminal_b: Terminal
 
-var corners: Array[Vector2] = []
+@export var corners: Array[Vector2] = []
 
 var preview_position := Vector2.ZERO
 
-var finished := false
-
+@export var finished := false
 
 func _ready() -> void:
-	add_to_group("wires")
-	
-	
+	add_to_group("wire")
+
+
+func _process(_delta: float) -> void:
+	update_render()
+
 func get_other_terminal(terminal: Terminal) -> Terminal:
 	if terminal == terminal_a:
 		return terminal_b
@@ -30,26 +32,31 @@ func get_other_terminal(terminal: Terminal) -> Terminal:
 func initialize(start: Terminal):
 	finished = false
 	terminal_a = start
-	terminal_a.connected_wires.append(self)
+	preview_position = terminal_a.global_position
+	terminal_a.add_wire(self)
 	terminal_a.position_changed.connect(update_render)
 	update_render()
+	
 
 func add_corner(point: Vector2):
 	corners.append(point)
 	update_render()
 	
+	
 func finish(end: Terminal):
 	finished = true
 	terminal_b = end
-	terminal_b.connected_wires.append(self)
+	terminal_b.add_wire(self)
 	terminal_b.position_changed.connect(update_render)
 	update_render()
+
 
 func update_preview(mouse: Vector2):
 	if finished:
 		return
 	preview_position = mouse
 	update_render()
+
 
 func update_render():
 	line.clear_points()
@@ -72,7 +79,6 @@ func update_render():
 
 
 func chaikin(points: Array[Vector2]) -> Array[Vector2]:
-
 	if points.size() < 2:
 		return points
 

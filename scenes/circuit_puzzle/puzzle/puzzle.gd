@@ -21,7 +21,6 @@ var current_wire: Wire = null
 var next_wire_id := 1
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Carregar level 1 - funcionalidade desenvolvimento 
 	load_inventory(PUZZLES.puzzle_1)
@@ -36,10 +35,22 @@ func _ready() -> void:
 	$"VBoxContainer/adjacency_list()".pressed.connect(print_adjacency_list)
 	$"VBoxContainer/edge_list()".pressed.connect(print_edge_list)
 	$"VBoxContainer/edge_dfs()".pressed.connect(print_edge_dfs)
+	$"VBoxContainer/Simular".pressed.connect(simular_circuito)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	# Inicializar um Led conectado
+	var led = $HBoxContainer/WorkSpace/Led
+	var energy_source = $HBoxContainer/WorkSpace/EnergySourceBanana
+	
+	#print(led.terminals["anodo"])
+	_start_wire(led.terminals["anodo"])
+	_finish_wire(energy_source.terminals["positivo"])
+	_start_wire(led.terminals["catodo"])
+	_finish_wire(energy_source.terminals["negativo"])
+	
+
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(_delta: float) -> void:
+	#pass
 
 
 # Loading Inventory
@@ -61,10 +72,11 @@ func _on_slot_down(slot):
 	# gerar uma cena do item
 	var component = slot.get_meta("component_data")
 	var component_scene: Component = component.scene.instantiate()
-	
+	# Adicionar no work_space
 	work_space.add_child(component_scene)
 	
-	for terminal: Terminal in component_scene.terminals:
+	# Conectar os terminais às funções 
+	for terminal: Terminal in component_scene.terminals.values():
 		terminal.terminal_hovered.connect(_on_terminal_hovered)
 		terminal.terminal_unhovered.connect(_on_terminal_unhovered)
 	
@@ -84,12 +96,6 @@ func _on_terminal_unhovered(terminal: Terminal) -> void:
 func _input(event: InputEvent) -> void:
 	_handle_wire_input(event)
 	
-	if state == State.DRAW_WIRE:
-		if event is InputEventMouseMotion:
-			current_wire.update_preview(
-				event.global_position
-			)
-
 
 func _handle_wire_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -97,15 +103,19 @@ func _handle_wire_input(event: InputEvent) -> void:
 			match state:
 				State.IDLE:	
 					if hovered_terminal:
-						_start_wire()
+						_start_wire(hovered_terminal)
 				State.DRAW_WIRE:
 					if hovered_terminal:
-						_finish_wire()
+						_finish_wire(hovered_terminal)
 					else:
 						_add_wire_corner(event)
+						
+	if state == State.DRAW_WIRE:
+		if event is InputEventMouseMotion:
+			current_wire.update_preview(event.global_position)
 
 
-func _start_wire():
+func _start_wire(terminal: Terminal):
 	current_wire = WIRE_SCENE.instantiate()
 	
 	#current_wire.id = next_wire_id
@@ -114,11 +124,10 @@ func _start_wire():
 	current_wire.name = "Wire_%02d" % next_wire_id
 	print(current_wire.name)
 	
-	current_wire.initialize(hovered_terminal)
-	hovered_terminal.add_wire(current_wire)
+	current_wire.initialize(terminal)
 	
 	print("Criar fio")
-	print("Começar fio em:".rpad(25), hovered_terminal)
+	print("Começar fio em:".rpad(25), terminal)
 	
 	state = State.DRAW_WIRE
 	
@@ -129,47 +138,26 @@ func _add_wire_corner(event: InputEventMouseButton):
 	print("Fazer canto de fio em: ".rpad(25), point)
 
 
-func _finish_wire():
-	current_wire.finish(hovered_terminal)
-	hovered_terminal.add_wire(current_wire)
-	print("Terminar fio em: ".rpad(25), hovered_terminal)
+func _finish_wire(terminal: Terminal):
+	current_wire.finish(terminal)
+	print("Terminar fio em: ".rpad(25), terminal)
 	
 	current_wire = null
 	state = State.IDLE
 	
 	
 func print_adjacency_list() -> void:
-
 	print("\n=== ADJACENCY LIST ===")
-
 	for terminal: Terminal in get_tree().get_nodes_in_group("terminals"):
-
 		print("\n", terminal.name)
-
 		for wire in terminal.connected_wires:
-
 			var other := wire.get_other_terminal(terminal)
-
-			print(
-				"    ",
-				wire.name,
-				" -> ",
-				other.name
-			)
+			print("\t", wire.name," -> ",other.name)
 
 func print_edge_list() -> void:
-
 	print("\n=== EDGE LIST ===")
-
-	for wire: Wire in get_tree().get_nodes_in_group("wires"):
-
-		print(
-			wire.name,
-			": ",
-			wire.terminal_a.name,
-			" <-> ",
-			wire.terminal_b.name
-		)
+	for wire: Wire in get_tree().get_nodes_in_group("wire"):
+		print(wire.name, ": ", wire.terminal_a.name, " <-> ", wire.terminal_b.name)
 
 func print_edge_dfs():
 	print("\n=== EDGE DFS ===")
@@ -179,23 +167,23 @@ func print_edge_dfs():
 	_edge_dfs(start, visited_wires)
 
 func _edge_dfs(terminal: Terminal, visited_wires: Dictionary):
-
 	print(terminal.name)
-
 	for wire in terminal.connected_wires:
-
 		if visited_wires.has(wire):
 			continue
-
 		visited_wires[wire] = true
-
 		var other = wire.get_other_terminal(terminal)
-
-		print(
-			"    ",
-			wire.name,
-			" -> ",
-			other.name
-		)
+		print("\t", wire.name, " -> ", other.name)
 
 		_edge_dfs(other, visited_wires)
+
+
+func simular_circuito():
+	# Iniciar procurando elementos de fonte de energia
+	for energy_source in get_tree().get_nodes_in_group("energy_source"):
+		energy_source.terminals['positivo'] 
+		
+		
+		
+	#for energy_source in work_space.get_groups()
+	pass
