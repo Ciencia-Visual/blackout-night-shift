@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://q2tryv3mw6ca"]
+
+[node name="ControlPage" type="Control" unique_id=1826920122]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=2020148998]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+text = "CONTROLE DA INSTALAÇÃO"
+
+[node name="Label2" type="Label" parent="." unique_id=958744208]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 78.0
+offset_right = 231.0
+offset_bottom = 153.0
+theme_override_font_sizes/font_size = 45
+text = "Porta Norte: ONLINE
+Porta Sul: ONLINE
+Sistema de energia: NORMAL"

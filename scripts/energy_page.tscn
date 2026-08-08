@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://p0dosfrj2xwf"]
+
+[node name="EnergyPage" type="Control" unique_id=1742622278]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margins" type="MarginContainer" parent="." unique_id=738431932]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 1200.0
+offset_bottom = 650.0
+
+[node name="Content" type="VBoxContainer" parent="Margins" unique_id=1341090321]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margins/Content" unique_id=786203030]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "ENERGIA DO SISTEMA"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Margins/Content" unique_id=1662035900]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Margins/Content" unique_id=298430202]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Gerador principal:  ONLINE"
+
+[node name="Label3" type="Label" parent="Margins/Content" unique_id=94061444]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Tensão: 220V"
+
+[node name="Label4" type="Label" parent="Margins/Content" unique_id=1511944194]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Consumo atual: 68%"
+
+[node name="Label5" type="Label" parent="Margins/Content" unique_id=1989531796]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Bateria reserva: 100%"
+
+[node name="Label6" type="Label" parent="Margins/Content" unique_id=303591344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Estado: NORMAL"
