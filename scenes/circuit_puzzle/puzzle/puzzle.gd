@@ -42,10 +42,10 @@ func _ready() -> void:
 	var energy_source = $HBoxContainer/WorkSpace/EnergySourceBanana
 	
 	#print(led.terminals["anodo"])
-	_start_wire(led.terminals["anodo"])
-	_finish_wire(energy_source.terminals["positivo"])
-	_start_wire(led.terminals["catodo"])
-	_finish_wire(energy_source.terminals["negativo"])
+	#_start_wire(led.terminals["anodo"])
+	#_finish_wire(energy_source.terminals["positivo"])
+	#_start_wire(led.terminals["catodo"])
+	#_finish_wire(energy_source.terminals["negativo"])
 	
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -181,8 +181,9 @@ func _edge_dfs(terminal: Terminal, visited_wires: Dictionary):
 func simular_circuito():
 	# Iniciar procurando elementos de fonte de energia
 	for energy_source in get_tree().get_nodes_in_group("energy_source"):
+		print(energy_source)
+		print(energy_source.terminals['positivo'])
 		energy_source.terminals['positivo'] 
-		
 		
 		
 	#for energy_source in work_space.get_groups()
