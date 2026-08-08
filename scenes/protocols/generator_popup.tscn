@@ -43,7 +43,7 @@ wire_button = NodePath("MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/
 switch_button = NodePath("MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/SwitchButton")
 resistor_button = NodePath("MarginContainer/VBoxContainer2/Panel/Question/PiecesRow/ResistorButton")
 question = NodePath("MarginContainer/VBoxContainer2/Panel/Question")
-puzzle = NodePath("MarginContainer/VBoxContainer2/Panel/MarginContainer/MarginContainer")
+puzzle = NodePath("MarginContainer/VBoxContainer2/Panel/Puzzle")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1224614480]
 layout_mode = 1
@@ -173,6 +173,7 @@ theme_override_font_sizes/font_size = 20
 text = "Resistor"
 
 [node name="Puzzle" parent="MarginContainer/VBoxContainer2/Panel" unique_id=443587558 instance=ExtResource("5_dvn78")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

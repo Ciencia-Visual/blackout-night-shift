@@ -13,6 +13,10 @@ signal peca_errada
 @export var puzzle: Control
 
 
+func _ready() -> void:
+	question.show()
+	puzzle.hide()
+	
 func iniciar_protocolo():
 	question.show()
 	puzzle.hide()

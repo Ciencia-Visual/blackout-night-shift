@@ -9,7 +9,6 @@ radius = 21.0
 height = 66.0
 
 [node name="Led" type="Node2D" unique_id=1341039767 node_paths=PackedStringArray("hitbox_drag", "terminals")]
-position = Vector2(203, 106)
 script = ExtResource("1_auhl8")
 component_name = "LED"
 hitbox_drag = NodePath("Hitbox")
