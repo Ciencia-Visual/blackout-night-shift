@@ -231,6 +231,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -2)
 [node name="Structure" type="Node3D" parent="." unique_id=1950339874]
 
 [node name="Floor" type="MeshInstance3D" parent="Structure" unique_id=753796583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.959288)
 mesh = SubResource("BoxMesh_01y1c")
 surface_material_override/0 = SubResource("StandardMaterial3D_8du81")
 
