@@ -11,7 +11,7 @@ func _ready():
 func _on_area_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print("botãoclicado")
+			print("botão clicado")
 			door.alternar_porta()
 
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:

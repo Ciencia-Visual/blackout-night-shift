@@ -3,7 +3,7 @@ extends Node3D
 signal porta_fechada
 
 @onready var anim = $AnimationPlayer
-var aberta := false
+var aberta := true
 
 
 

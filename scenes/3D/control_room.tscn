@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://cg7yg3yufhnp8" path="res://icons/lg_gaming_monitor__low_poly__game_ready.glb" id="13_llc1v"]
 [ext_resource type="PackedScene" uid="uid://cflfei0ewcw44" path="res://icons/hp_laptop_low_poly__game_ready_3d_model.glb" id="14_7qjpn"]
 [ext_resource type="Script" uid="uid://bai3vywttu3oh" path="res://scenes/3D/slidingdoorbutton.gd" id="14_llc1v"]
-[ext_resource type="Texture2D" uid="uid://b6d4j134xwkxe" path="res://images/backgrounds/leftdoorimage.png" id="14_n802c"]
 [ext_resource type="Texture2D" uid="uid://b6d4j134xwkxe" path="res://images/backgrounds/leftdoorimage.png" id="15_dnkox"]
 [ext_resource type="PackedScene" uid="uid://bhmmjjk11ddwn" path="res://icons/electrical_breaker_panel_box__lp_model.glb" id="15_n802c"]
 [ext_resource type="PackedScene" uid="uid://dpv6xv8e8tgpn" path="res://scenes/panels/computer_ui.tscn" id="21_dnkox"]
@@ -67,7 +66,7 @@ uv1_scale = Vector3(2, 2, 2)
 size = Vector3(1, 6, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1lkq"]
-albedo_texture = ExtResource("14_n802c")
+albedo_texture = ExtResource("15_dnkox")
 uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53wbm"]
@@ -99,12 +98,40 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-5, 2, -2.5)]
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_11wea"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rightdoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.45062605, 1),
+"update": 0,
+"values": [Vector3(-5.05, 2, 0.45), Vector3(-5.05, 2, -0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leftdoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.45062605, 1),
+"update": 0,
+"values": [Vector3(-5.05, 2, -2.45), Vector3(-5.05, 2, -1.5)]
 }
 
 [sub_resource type="Animation" id="Animation_7qjpn"]
 resource_name = "open"
-length = 1.22
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -112,10 +139,10 @@ tracks/0/path = NodePath("Leftdoor:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.45062605, 1),
 "update": 0,
-"values": [Vector3(-5, 2, -0.5), Vector3(-5, 2, 0.5)]
+"values": [Vector3(-5.05, 2, -0.5), Vector3(-5.05, 2, 0.45)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -124,15 +151,16 @@ tracks/1/path = NodePath("Rightdoor:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.45062605, 1),
 "update": 0,
-"values": [Vector3(-5, 2, -1.5), Vector3(-5, 2, -2.5)]
+"values": [Vector3(-5.05, 2, -1.5), Vector3(-5.05, 2, -2.45)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n802c"]
 _data = {
 &"RESET": SubResource("Animation_llc1v"),
+&"close": SubResource("Animation_11wea"),
 &"open": SubResource("Animation_7qjpn")
 }
 
@@ -246,7 +274,7 @@ transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-
 script = ExtResource("13_2irhw")
 
 [node name="Rightdoor" type="MeshInstance3D" parent="Structure/SlidingDoors" unique_id=856397082]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2, -2.5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("BoxMesh_omq3p")
 surface_material_override/0 = SubResource("StandardMaterial3D_t1lkq")
 
@@ -440,7 +468,6 @@ shadow_enabled = true
 omni_range = 2.983486
 
 [node name="ComputerUI" parent="." unique_id=1537856874 instance=ExtResource("21_dnkox")]
-visible = false
 custom_minimum_size = Vector2(700, 400)
 anchors_preset = 8
 anchor_left = 0.5
