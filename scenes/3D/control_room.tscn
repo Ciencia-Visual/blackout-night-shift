@@ -312,14 +312,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rdpry")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Structure/Hallwaypart" unique_id=1230653325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 4, -2)
-visible = false
 light_color = Color(1, 0.15686275, 0.15686275, 1)
 light_energy = 5.181
 omni_range = 21.514
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Structure/Hallwaypart" unique_id=1279372125]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 4, 2)
-visible = false
 light_color = Color(1, 0.15686275, 0.15686275, 1)
 light_energy = 7.737
 omni_range = 21.514
