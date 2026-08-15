@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ba4chynsvcomg" path="res://scenes/main/game_manager.gd" id="1_1r6ip"]
 [ext_resource type="Script" uid="uid://cvfujosi6jnw1" path="res://scenes/main/main.gd" id="1_lixft"]
-[ext_resource type="Texture2D" uid="uid://dwxkq8f2g35n2" path="res://backgrounds/control_room.jpeg" id="2_qw60k"]
+[ext_resource type="Texture2D" uid="uid://btc4kbn42135x" path="res://backgrounds/control_room.png" id="2_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://7x2ox503rvg7" path="res://scenes/protocols/religamento_popup.tscn" id="3_xlvfx"]
 [ext_resource type="PackedScene" uid="uid://jjb8221sadb5" path="res://scenes/protocols/north_popup.tscn" id="3_y3v7k"]
 [ext_resource type="PackedScene" uid="uid://blkxhfdxjp2uo" path="res://scenes/protocols/generator_popup.tscn" id="4_hryqi"]
@@ -56,7 +56,7 @@ offset_right = 44.0
 offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_qw60k")
+texture = ExtResource("2_b1x3f")
 
 [node name="HUD" type="Control" parent="." unique_id=681254730]
 layout_mode = 1
@@ -236,6 +236,7 @@ parameters/looping = true
 stream = ExtResource("5_2a143")
 volume_db = -12.0
 autoplay = true
+parameters/looping = true
 
 [node name="ProtocolSound" type="AudioStreamPlayer" parent="." unique_id=2021531976]
 stream = ExtResource("6_2a143")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwxkq8f2g35n2"
-path="res://.godot/imported/control_room.jpeg-8311c1bccc1a28de1eed4e7d96e275cd.ctex"
+uid="uid://dcflrt3sgrdd7"
+path="res://.godot/imported/argus_ia_black_512px.png-e0e73584d1b3ac0a70e40607fbe4b372.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgrounds/control_room.jpeg"
-dest_files=["res://.godot/imported/control_room.jpeg-8311c1bccc1a28de1eed4e7d96e275cd.ctex"]
+source_file="res://images/argus_ia/argus_ia_black_512px.png"
+dest_files=["res://.godot/imported/argus_ia_black_512px.png-e0e73584d1b3ac0a70e40607fbe4b372.ctex"]
 
 [params]
 

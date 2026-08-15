@@ -18,7 +18,6 @@ var state := State.IDLE
 
 var hovered_terminal: Terminal = null
 var current_wire: Wire = null
-var next_wire_id := 1
 
 
 func _ready() -> void:
@@ -32,9 +31,9 @@ func _ready() -> void:
 		terminal.terminal_unhovered.connect(_on_terminal_unhovered)
 
 	# Botões de testes
-	$"VBoxContainer/adjacency_list()".pressed.connect(print_adjacency_list)
-	$"VBoxContainer/edge_list()".pressed.connect(print_edge_list)
-	$"VBoxContainer/edge_dfs()".pressed.connect(print_edge_dfs)
+	#$"VBoxContainer/adjacency_list()".pressed.connect(print_adjacency_list)
+	#$"VBoxContainer/edge_list()".pressed.connect(print_edge_list)
+	#$"VBoxContainer/edge_dfs()".pressed.connect(print_edge_dfs)
 	$"VBoxContainer/Simular".pressed.connect(simular_circuito)
 
 	# Inicializar um Led conectado
@@ -85,8 +84,8 @@ func _on_slot_down(slot):
 
 
 func _on_terminal_hovered(terminal: Terminal) -> void:
-	hovered_terminal = terminal
-
+	hovered_terminal = terminal   
+	
 
 func _on_terminal_unhovered(terminal: Terminal) -> void:
 	if hovered_terminal == terminal:
@@ -118,12 +117,8 @@ func _handle_wire_input(event: InputEvent) -> void:
 func _start_wire(terminal: Terminal):
 	current_wire = WIRE_SCENE.instantiate()
 	
-	#current_wire.id = next_wire_id
-	
 	wires.add_child(current_wire)
-	current_wire.name = "Wire_%02d" % next_wire_id
-	print(current_wire.name)
-	
+	#hovered_component_a = c
 	current_wire.initialize(terminal)
 	
 	print("Criar fio")
@@ -144,46 +139,48 @@ func _finish_wire(terminal: Terminal):
 	
 	current_wire = null
 	state = State.IDLE
+
+
+func get_connected_components(start: Terminal) -> Array[Component]:
+	var visited := {}
+	var components: Array[Component] = []
 	
+	_traverse_components(start, visited, components)
 	
-func print_adjacency_list() -> void:
-	print("\n=== ADJACENCY LIST ===")
-	for terminal: Terminal in get_tree().get_nodes_in_group("terminals"):
-		print("\n", terminal.name)
-		for wire in terminal.connected_wires:
-			var other := wire.get_other_terminal(terminal)
-			print("\t", wire.name," -> ",other.name)
+	return components
+	
 
-func print_edge_list() -> void:
-	print("\n=== EDGE LIST ===")
-	for wire: Wire in get_tree().get_nodes_in_group("wire"):
-		print(wire.name, ": ", wire.terminal_a.name, " <-> ", wire.terminal_b.name)
-
-func print_edge_dfs():
-	print("\n=== EDGE DFS ===")
-	var start = $HBoxContainer/WorkSpace/EnergySourceBanana/Positivo
-	var visited_wires := {}
-
-	_edge_dfs(start, visited_wires)
-
-func _edge_dfs(terminal: Terminal, visited_wires: Dictionary):
-	print(terminal.name)
-	for wire in terminal.connected_wires:
-		if visited_wires.has(wire):
-			continue
-		visited_wires[wire] = true
-		var other = wire.get_other_terminal(terminal)
-		print("\t", wire.name, " -> ", other.name)
-
-		_edge_dfs(other, visited_wires)
+func _traverse_components(
+	terminal: Terminal,
+	visited: Dictionary,
+	components: Array[Component]
+) -> void:
+	
+	if visited.has(terminal):
+		return
+	
+	visited[terminal] = true
+	
+	var component := terminal.get_parent() as Component
+	
+	if component != null and component not in components:
+		components.append(component)
+	
+	for connected_terminal: Terminal in terminal.connected_terminals:
+		_traverse_components(
+			connected_terminal,
+			visited,
+			components
+		)
 
 
 func simular_circuito():
-	# Iniciar procurando elementos de fonte de energia
-	for energy_source in get_tree().get_nodes_in_group("energy_source"):
-		energy_source.terminals['positivo'] 
+	for energy_source: EnergySource in get_tree().get_nodes_in_group("energy_source"):
+		var terminal_start: Terminal = energy_source.terminals["positivo"]
 		
+		var components := get_connected_components(terminal_start)
 		
+		print("\n=== CIRCUITO ===")
 		
-	#for energy_source in work_space.get_groups()
-	pass
+		for component in components:
+			print(component.name)

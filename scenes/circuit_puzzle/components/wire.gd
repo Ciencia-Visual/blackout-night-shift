@@ -33,7 +33,6 @@ func initialize(start: Terminal):
 	finished = false
 	terminal_a = start
 	preview_position = terminal_a.global_position
-	terminal_a.add_wire(self)
 	terminal_a.position_changed.connect(update_render)
 	update_render()
 	
@@ -46,9 +45,10 @@ func add_corner(point: Vector2):
 func finish(end: Terminal):
 	finished = true
 	terminal_b = end
-	terminal_b.add_wire(self)
 	terminal_b.position_changed.connect(update_render)
 	update_render()
+	
+	terminal_a.connect_terminal(terminal_b)
 
 
 func update_preview(mouse: Vector2):

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6ygxpf6g7n0r"]
 
-[ext_resource type="Script" uid="uid://vokgsqd0bhad" path="res://scenes/start_screen.gd" id="1_ainjc"]
-[ext_resource type="Texture2D" uid="uid://du6xvhs5hi7g7" path="res://backgrounds/Startscreenback.jpeg" id="1_i8r30"]
+[ext_resource type="Script" uid="uid://vokgsqd0bhad" path="res://scenes/main/start_screen.gd" id="1_ainjc"]
+[ext_resource type="Texture2D" uid="uid://btd72ps7x6lnh" path="res://images/backgrounds/Startscreenback.png" id="2_nkrfi"]
 [ext_resource type="AudioStream" uid="uid://bxa52ywcauwui" path="res://music/luis_humanoide-the-upside-down-298541.mp3" id="3_60ddj"]
 [ext_resource type="AudioStream" uid="uid://ryxjv6yeq0dk" path="res://sounds/music/sfx/dskoll-computer-mouse-click-double-click-and-triple-click-140106.mp3" id="4_5e717"]
 
@@ -47,8 +47,8 @@ _data = {
 [node name="StartScreen" type="Control" unique_id=1778631456]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1280.0
+offset_bottom = 720.0
 script = ExtResource("1_ainjc")
 
 [node name="Background" type="TextureRect" parent="." unique_id=2079209758]
@@ -56,36 +56,31 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -3.0
-offset_right = 1245.0
-offset_bottom = 677.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_i8r30")
-expand_mode = 3
-stretch_mode = 6
+texture = ExtResource("2_nkrfi")
+expand_mode = 5
 
 [node name="DarkOverlay" type="ColorRect" parent="." unique_id=1601313594]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1240.0
-offset_bottom = 684.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.47058824)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=870516636]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 273.0
-offset_top = 100.0
-offset_right = 933.0
-offset_bottom = 560.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 350.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -133,17 +128,24 @@ Boa sorte."
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="StarterButton" type="Button" parent="." unique_id=1438288109]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 555.0
-offset_right = 715.0
-offset_bottom = 598.0
+[node name="StarterButton" type="Button" parent="CenterContainer/Panel" unique_id=1438288109]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.5
+offset_top = -43.0
+offset_right = 96.5
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 25
 text = "INICIAR TURNO"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1172601233]
 stream = ExtResource("3_60ddj")
+volume_db = -12.0
 autoplay = true
 
 [node name="Fade" type="ColorRect" parent="." unique_id=797276937]
@@ -151,9 +153,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_right = 1243.0
-offset_bottom = 675.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -166,4 +165,4 @@ libraries/ = SubResource("AnimationLibrary_mtlf8")
 stream = ExtResource("4_5e717")
 volume_db = 2.657
 
-[connection signal="pressed" from="StarterButton" to="." method="_on_starter_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/StarterButton" to="." method="_on_starter_button_pressed"]
