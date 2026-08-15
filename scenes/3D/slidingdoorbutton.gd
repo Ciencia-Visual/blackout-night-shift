@@ -18,3 +18,4 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			print("Botão clicado!")
+			# Ola
