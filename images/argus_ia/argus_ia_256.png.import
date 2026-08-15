@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnjqr03ja6236"
-path="res://.godot/imported/WhatsApp Image 2026-07-11 at 18.06.31.jpeg-c5f2eade2978a59c2e11f3c472e33ca2.ctex"
+uid="uid://cpnnvqqu5s2uc"
+path="res://.godot/imported/argus_ia_256.png-9ec24ca5e19d1502a5e7b6a587191a1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgrounds/WhatsApp Image 2026-07-11 at 18.06.31.jpeg"
-dest_files=["res://.godot/imported/WhatsApp Image 2026-07-11 at 18.06.31.jpeg-c5f2eade2978a59c2e11f3c472e33ca2.ctex"]
+source_file="res://images/argus_ia/argus_ia_256.png"
+dest_files=["res://.godot/imported/argus_ia_256.png-9ec24ca5e19d1502a5e7b6a587191a1f.ctex"]
 
 [params]
 

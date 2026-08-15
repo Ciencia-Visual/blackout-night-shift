@@ -13,7 +13,13 @@ config_version=5
 config/name="Blackout night shift"
 run/main_scene="uid://b6ygxpf6g7n0r"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="uid://d2vvky1wtnr5"
+config/icon="uid://bnt6upuh8t3ym"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [display]
 

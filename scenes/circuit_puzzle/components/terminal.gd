@@ -5,7 +5,7 @@ var draw_mark := false
 var mark_size_outer := Vector2(20, 20)
 var mark_size_inner := Vector2(10, 10)
 
-@export var connected_wires: Array[Wire] = []
+var connected_terminals: Array[Terminal] = []
 
 signal terminal_hovered(terminal: Terminal)
 signal terminal_unhovered(terminal: Terminal)
@@ -20,9 +20,16 @@ func _ready() -> void:
 	$Label.text = text_label
 	z_index = 10
 	
-func add_wire(wire: Wire):
-	if wire not in connected_wires:
-		connected_wires.append(wire)
+	
+func connect_terminal(terminal: Terminal) -> void:
+	if terminal == self:
+		return
+	
+	if terminal not in connected_terminals:
+		connected_terminals.append(terminal)
+	
+	if self not in terminal.connected_terminals:
+		terminal.connected_terminals.append(self)
 
 
 func _on_area_2d_mouse_shape_entered(_shape_idx: int) -> void:

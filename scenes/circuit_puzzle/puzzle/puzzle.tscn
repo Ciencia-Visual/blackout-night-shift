@@ -46,7 +46,7 @@ terminals = {
 [node name="Wires" type="Node2D" parent="HBoxContainer/WorkSpace" unique_id=1088921079]
 
 [node name="Led" parent="HBoxContainer/WorkSpace" unique_id=1341039767 node_paths=PackedStringArray("terminals") instance=ExtResource("5_2fiqm")]
-visible = false
+position = Vector2(300, 96)
 terminals = {
 "anodo": NodePath("Anodo"),
 "catodo": NodePath("Catodo")

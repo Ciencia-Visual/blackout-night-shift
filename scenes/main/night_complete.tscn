@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8l478owqxduj"]
 
-[ext_resource type="Script" uid="uid://cs15fpwiswbjp" path="res://scenes/night_complete.gd" id="1_0t3km"]
+[ext_resource type="Script" uid="uid://cs15fpwiswbjp" path="res://scenes/main/night_complete.gd" id="1_0t3km"]
 [ext_resource type="Texture2D" uid="uid://bnjqr03ja6236" path="res://backgrounds/WhatsApp Image 2026-07-11 at 18.06.31.jpeg" id="2_h2gd2"]
 
 [node name="NightComplete" type="Control" unique_id=640770899]

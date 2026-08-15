@@ -1,6 +1,6 @@
 class_name Led extends Component
 
-@onready var sprite = $Sprite2D as Sprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super._ready()
