@@ -1,8 +1,8 @@
 extends Panel
 
 
-@onready var clock_label = $StatusContent/ClockLabel
-@onready var game_time = $"../../GameTime"
+@export var time_label: Label
+@export var game_time: Node
 
 func _process(_delta):
-	clock_label.text = "%02d:%02d" % [game_time.hora, game_time.minuto]
+	time_label.text = "%02d:%02d" % [game_time.hora, game_time.minuto]

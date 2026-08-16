@@ -16,7 +16,7 @@ func _on_animation_finished(anim_name):
 
 func alternar_porta():
 	if aberta:
-		anim.play_backwards("open")
+		anim.play("close")
 	else:
 		anim.play("open")
 	
