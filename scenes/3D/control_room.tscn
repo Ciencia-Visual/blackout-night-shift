@@ -19,7 +19,10 @@
 [ext_resource type="Script" uid="uid://bai3vywttu3oh" path="res://scenes/3D/slidingdoorbutton.gd" id="14_llc1v"]
 [ext_resource type="Texture2D" uid="uid://b6d4j134xwkxe" path="res://images/backgrounds/leftdoorimage.png" id="15_dnkox"]
 [ext_resource type="PackedScene" uid="uid://bhmmjjk11ddwn" path="res://icons/electrical_breaker_panel_box__lp_model.glb" id="15_n802c"]
+[ext_resource type="Script" uid="uid://bfn7yplpycy5d" path="res://icons/hp_laptop_low_poly__game_ready_3d_model.gd" id="19_qtdnu"]
+[ext_resource type="Script" uid="uid://bd8sndnynt4qf" path="res://scenes/3D/mainmenu.gd" id="21_djeq0"]
 [ext_resource type="PackedScene" uid="uid://dpv6xv8e8tgpn" path="res://scenes/panels/computer_ui.tscn" id="21_dnkox"]
+[ext_resource type="Script" uid="uid://7whvxo04sqbs" path="res://scenes/panels/computer_ui.gd" id="21_os4nj"]
 [ext_resource type="PackedScene" uid="uid://c3wsa2cqj33so" path="res://icons/bot_mecha_warrior_3d_by_oscar_creativo.glb" id="22_6syic"]
 [ext_resource type="Script" uid="uid://de3qn7ioewi2b" path="res://scenes/3D/robot_threat1.gd" id="22_qtdnu"]
 [ext_resource type="Script" uid="uid://clknl5v6202aq" path="res://scenes/3D/status_bar.gd" id="23_11wea"]
@@ -186,6 +189,9 @@ albedo_color = Color(0.072842635, 0.072842635, 0.072842635, 1)
 metallic = 0.6
 metallic_specular = 0.13
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kl26a"]
+size = Vector3(1.6588669, 1.0012512, 1.0996704)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01y1c"]
 bg_color = Color(0.21950099, 0.21950105, 0.21950087, 0.58431375)
 border_width_left = 1
@@ -341,8 +347,65 @@ light_energy = 0.0
 [node name="lg_gaming_monitor__low_poly__game_ready" parent="." unique_id=1723322272 instance=ExtResource("13_llc1v")]
 transform = Transform3D(-0.046984635, 0, 0.017101012, 0, 0.05, 0, -0.017101012, 0, -0.046984635, 0.8, 1.7, -1)
 
-[node name="hp_laptop_low_poly__game_ready_3d_model" parent="." unique_id=147111707 instance=ExtResource("14_7qjpn")]
+[node name="Computer" parent="." unique_id=147111707 instance=ExtResource("14_7qjpn")]
 transform = Transform3D(0.34641016, 0, 0.2, 0, 0.4, 0, -0.2, 0, 0.34641016, -0.5, 1.61, -1)
+script = ExtResource("19_qtdnu")
+
+[node name="Area3D" type="Area3D" parent="Computer" unique_id=82035232]
+transform = Transform3D(0.9999997, 0, -1.4901161e-07, 0, 0.9999991, 0, 1.4901161e-07, 0, 0.9999997, 0.026730299, 0.002963066, 0.20324302)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Computer/Area3D" unique_id=977074324]
+transform = Transform3D(0.9999994, 0, -9.23872e-07, 0, 0.99997514, 0, 9.23872e-07, 0, 0.9999994, -0.018349767, 0.5398822, -0.24539113)
+shape = SubResource("BoxShape3D_kl26a")
+
+[node name="ComputerUI" parent="Computer" unique_id=1537856874 instance=ExtResource("21_dnkox")]
+custom_minimum_size = Vector2(700, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -200.0
+offset_right = 350.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+script = ExtResource("21_os4nj")
+
+[node name="Background" type="ColorRect" parent="Computer/ComputerUI" unique_id=12143881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 2.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mainmenu" type="VBoxContainer" parent="Computer/ComputerUI" unique_id=2132473235]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("21_djeq0")
+
+[node name="Camerabutton" type="Button" parent="Computer/ComputerUI/Mainmenu" unique_id=719228034]
+layout_mode = 2
+
+[node name="Antenabutton" type="Button" parent="Computer/ComputerUI/Mainmenu" unique_id=274308480]
+layout_mode = 2
+
+[node name="Energybutton" type="Button" parent="Computer/ComputerUI/Mainmenu" unique_id=1835646632]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="Computer/ComputerUI/Mainmenu" unique_id=944607355]
+layout_mode = 2
 
 [node name="Sketchfab_Scene" parent="." unique_id=1786845423 instance=ExtResource("15_n802c")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 1, -2.5)
@@ -467,47 +530,6 @@ light_energy = 11.211
 light_indirect_energy = 1.158
 shadow_enabled = true
 omni_range = 2.983486
-
-[node name="ComputerUI" parent="." unique_id=1537856874 instance=ExtResource("21_dnkox")]
-visible = false
-custom_minimum_size = Vector2(700, 400)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -200.0
-offset_right = 350.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 6
-
-[node name="Background" type="ColorRect" parent="ComputerUI" unique_id=12143881]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Mainmenu" type="VBoxContainer" parent="ComputerUI" unique_id=2132473235]
-layout_mode = 1
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 80.0
-offset_bottom = 80.0
-
-[node name="Energybutton" type="Button" parent="ComputerUI/Mainmenu" unique_id=1835646632]
-layout_mode = 2
-
-[node name="Camerabutton" type="Button" parent="ComputerUI/Mainmenu" unique_id=719228034]
-layout_mode = 2
-
-[node name="Antenabutton" type="Button" parent="ComputerUI/Mainmenu" unique_id=274308480]
-layout_mode = 2
 
 [node name="RobotThreat" type="Node3D" parent="." unique_id=209275489]
 script = ExtResource("22_qtdnu")
