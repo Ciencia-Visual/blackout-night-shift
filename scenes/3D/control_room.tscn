@@ -26,12 +26,13 @@
 [ext_resource type="Script" uid="uid://de3qn7ioewi2b" path="res://scenes/3D/robot_threat1.gd" id="22_qtdnu"]
 [ext_resource type="Script" uid="uid://clknl5v6202aq" path="res://scenes/3D/status_bar.gd" id="23_11wea"]
 [ext_resource type="Script" uid="uid://cs67yo3qomolg" path="res://scenes/3D/game_time1.gd" id="24_qtdnu"]
+[ext_resource type="AudioStream" uid="uid://bxa52ywcauwui" path="res://music/luis_humanoide-the-upside-down-298541.mp3" id="27_os4nj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rkk07"]
 size = Vector3(2.8, 0.1, 1.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_01y1c"]
-size = Vector3(10, 0.2, 8)
+size = Vector3(10, 0.2, 11.306519)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8du81"]
 albedo_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
@@ -205,11 +206,14 @@ border_width_bottom = 1
 [node name="Camerapivot" type="Node3D" parent="Player" unique_id=513757277 node_paths=PackedStringArray("camera", "interaction_ray")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
 script = ExtResource("10_b7mk8")
+MIN_YAW = -70.0
+MAX_YAW = 70.0
 camera = NodePath("Camera3D")
 interaction_ray = NodePath("Camera3D/InteractionRay")
 
 [node name="Camera3D" type="Camera3D" parent="Player/Camerapivot" unique_id=709463008]
 current = true
+fov = 70.0
 
 [node name="InteractionRay" type="RayCast3D" parent="Player/Camerapivot/Camera3D" unique_id=2062404611]
 target_position = Vector3(0, 0, -6)
@@ -252,7 +256,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -2)
 [node name="Structure" type="Node3D" parent="." unique_id=1950339874]
 
 [node name="Floor" type="MeshInstance3D" parent="Structure" unique_id=753796583]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.959288)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6939713)
 mesh = SubResource("BoxMesh_01y1c")
 surface_material_override/0 = SubResource("StandardMaterial3D_8du81")
 
@@ -637,6 +641,11 @@ pivot_offset = Vector2(15, 2)
 script = ExtResource("24_qtdnu")
 energy_label = NodePath("../HUD/StatusBar/StatusContent/EnergyLabel")
 time_label = NodePath("../HUD/StatusBar/StatusContent/TimeLabel")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1320980563]
+stream = ExtResource("27_os4nj")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="porta_fechada" from="Structure/SlidingDoors" to="RobotThreat" method="_on_sliding_doors_porta_fechada"]
 [connection signal="input_event" from="Structure/Slidingdoorbutton/Area3D" to="Structure/Slidingdoorbutton" method="_on_area_3d_input_event"]

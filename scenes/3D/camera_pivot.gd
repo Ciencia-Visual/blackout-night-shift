@@ -3,8 +3,8 @@ extends Node3D
 const MIN_PITCH := -80.0
 const MAX_PITCH := 80.0
 
-const MIN_YAW := -90.0
-const MAX_YAW := 90.0
+@export var MIN_YAW := -90.0
+@export var MAX_YAW := 90.0
 
 const SENSITIVITY := 0.15
 const SMOOTH_SPEED := 12.0
