@@ -20,9 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://b6d4j134xwkxe" path="res://images/backgrounds/leftdoorimage.png" id="15_dnkox"]
 [ext_resource type="PackedScene" uid="uid://bhmmjjk11ddwn" path="res://icons/electrical_breaker_panel_box__lp_model.glb" id="15_n802c"]
 [ext_resource type="Script" uid="uid://bfn7yplpycy5d" path="res://icons/hp_laptop_low_poly__game_ready_3d_model.gd" id="19_qtdnu"]
-[ext_resource type="Script" uid="uid://bd8sndnynt4qf" path="res://scenes/3D/mainmenu.gd" id="21_djeq0"]
+[ext_resource type="Script" uid="uid://bd8sndnynt4qf" path="res://scenes/3D/options.gd" id="21_djeq0"]
 [ext_resource type="Script" uid="uid://7whvxo04sqbs" path="res://scenes/panels/computer_ui.gd" id="21_os4nj"]
 [ext_resource type="PackedScene" uid="uid://c3wsa2cqj33so" path="res://icons/bot_mecha_warrior_3d_by_oscar_creativo.glb" id="22_6syic"]
+[ext_resource type="Script" uid="uid://cty2vrf28h5g1" path="res://scenes/3D/cams.gd" id="22_20wnt"]
 [ext_resource type="Script" uid="uid://de3qn7ioewi2b" path="res://scenes/3D/robot_threat1.gd" id="22_qtdnu"]
 [ext_resource type="Script" uid="uid://clknl5v6202aq" path="res://scenes/3D/status_bar.gd" id="23_11wea"]
 [ext_resource type="Script" uid="uid://cs67yo3qomolg" path="res://scenes/3D/game_time1.gd" id="24_qtdnu"]
@@ -400,7 +401,7 @@ offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Mainmenu2" type="VBoxContainer" parent="Computer/ComputerUI" unique_id=2132473235]
+[node name="Options" type="VBoxContainer" parent="Computer/ComputerUI" unique_id=2132473235]
 layout_mode = 1
 offset_left = 36.0
 offset_top = 34.0
@@ -408,11 +409,11 @@ offset_right = 168.0
 offset_bottom = 198.0
 script = ExtResource("21_djeq0")
 
-[node name="Energybutton" type="Button" parent="Computer/ComputerUI/Mainmenu2" unique_id=1412004832]
+[node name="Energybutton" type="Button" parent="Computer/ComputerUI/Options" unique_id=1412004832]
 layout_mode = 2
 text = "Energia"
 
-[node name="EnergyUI" type="ColorRect" parent="Computer/ComputerUI/Mainmenu2/Energybutton" unique_id=254565233]
+[node name="EnergyUI" type="ColorRect" parent="Computer/ComputerUI/Options/Energybutton" unique_id=254565233]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 3.17
@@ -423,31 +424,88 @@ offset_right = 210.56
 offset_bottom = 201.38998
 color = Color(1, 0, 1, 1)
 
-[node name="Camerabutton" type="Button" parent="Computer/ComputerUI/Mainmenu2" unique_id=767181898]
+[node name="Camerabutton" type="Button" parent="Computer/ComputerUI/Options" unique_id=767181898]
 layout_mode = 2
 text = "Câmera"
 
-[node name="CameraUI" type="ColorRect" parent="Computer/ComputerUI/Mainmenu2/Camerabutton" unique_id=180717365]
+[node name="CameraUI" type="ColorRect" parent="Computer/ComputerUI/Options/Camerabutton" unique_id=180717365]
 layout_mode = 0
-offset_left = 171.0
-offset_top = -39.0
-offset_right = 629.0
-offset_bottom = 301.0
+offset_left = 170.0
+offset_top = -35.0
+offset_right = 628.0
+offset_bottom = 305.0
 color = Color(1, 1, 0, 1)
 
-[node name="Antenabutton" type="Button" parent="Computer/ComputerUI/Mainmenu2" unique_id=182734621]
+[node name="Cams" type="VBoxContainer" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI" unique_id=1292929406]
+z_index = 1
+layout_mode = 0
+offset_left = 265.0
+offset_top = 218.0
+offset_right = 442.0
+offset_bottom = 339.0
+alignment = 1
+script = ExtResource("22_20wnt")
+
+[node name="Cam1" type="Button" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams" unique_id=580757368]
+z_index = 1
+layout_mode = 2
+text = "Câmera 1"
+
+[node name="ColorRect" type="ColorRect" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams/Cam1" unique_id=2060514269]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.082
+anchor_top = -0.35500002
+anchor_right = 0.082
+anchor_bottom = -0.35500002
+offset_left = -279.514
+offset_top = -219.995
+offset_right = 181.486
+offset_bottom = 10.005001
+color = Color(0.54509807, 0, 0.5529412, 1)
+
+[node name="Cam2" type="Button" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams" unique_id=1041286548]
+z_index = 1
+layout_mode = 2
+text = "Câmera 2"
+
+[node name="ColorRect" type="ColorRect" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams/Cam2" unique_id=2136371148]
+z_index = -1
+layout_mode = 0
+offset_left = -264.0
+offset_top = -264.0
+offset_right = 194.0
+offset_bottom = -37.0
+color = Color(0, 1, 0.5294118, 1)
+
+[node name="Cam3" type="Button" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams" unique_id=1453634201]
+z_index = 1
+layout_mode = 2
+text = "Câmera 3"
+
+[node name="ColorRect" type="ColorRect" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams/Cam3" unique_id=697748514]
+z_index = -1
+layout_mode = 0
+offset_left = -262.0
+offset_top = -298.0
+offset_right = 195.0
+offset_bottom = -72.0
+color = Color(1, 0.12941177, 1, 1)
+
+[node name="Antenabutton" type="Button" parent="Computer/ComputerUI/Options" unique_id=182734621]
 layout_mode = 2
 text = "Antena"
 
-[node name="AntenaUI" type="ColorRect" parent="Computer/ComputerUI/Mainmenu2/Antenabutton" unique_id=919694652]
+[node name="AntenaUI" type="ColorRect" parent="Computer/ComputerUI/Options/Antenabutton" unique_id=919694652]
 layout_mode = 0
-offset_left = 171.0
-offset_top = -74.0
-offset_right = 630.0
-offset_bottom = 271.0
+offset_left = 169.0
+offset_top = -73.0
+offset_right = 628.0
+offset_bottom = 272.0
 color = Color(0, 0, 1, 1)
 
-[node name="ExitButton" type="Button" parent="Computer/ComputerUI/Mainmenu2" unique_id=278851081]
+[node name="ExitButton" type="Button" parent="Computer/ComputerUI/Options" unique_id=278851081]
 layout_mode = 2
 size_flags_vertical = 10
 text = "Sair"
