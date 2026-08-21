@@ -378,10 +378,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -200.0
-offset_right = 350.0
-offset_bottom = 200.0
+offset_left = -356.0
+offset_top = -218.0
+offset_right = 344.0
+offset_bottom = 182.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -393,29 +393,64 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Mainmenu2" type="VBoxContainer" parent="Computer/ComputerUI" unique_id=2132473235]
 layout_mode = 1
-offset_left = 49.0
-offset_top = 30.0
-offset_right = 102.0
-offset_bottom = 74.0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 168.0
+offset_bottom = 198.0
 script = ExtResource("21_djeq0")
-metadata/_edit_group_ = true
 
 [node name="Energybutton" type="Button" parent="Computer/ComputerUI/Mainmenu2" unique_id=1412004832]
 layout_mode = 2
+text = "Energia"
+
+[node name="EnergyUI" type="ColorRect" parent="Computer/ComputerUI/Mainmenu2/Energybutton" unique_id=254565233]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.17
+anchor_bottom = 4.3100004
+offset_left = 171.0
+offset_top = -4.0
+offset_right = 210.56
+offset_bottom = 201.38998
+color = Color(1, 0, 1, 1)
 
 [node name="Camerabutton" type="Button" parent="Computer/ComputerUI/Mainmenu2" unique_id=767181898]
 layout_mode = 2
+text = "Câmera"
+
+[node name="CameraUI" type="ColorRect" parent="Computer/ComputerUI/Mainmenu2/Camerabutton" unique_id=180717365]
+layout_mode = 0
+offset_left = 171.0
+offset_top = -39.0
+offset_right = 629.0
+offset_bottom = 301.0
+color = Color(1, 1, 0, 1)
 
 [node name="Antenabutton" type="Button" parent="Computer/ComputerUI/Mainmenu2" unique_id=182734621]
 layout_mode = 2
+text = "Antena"
+
+[node name="AntenaUI" type="ColorRect" parent="Computer/ComputerUI/Mainmenu2/Antenabutton" unique_id=919694652]
+layout_mode = 0
+offset_left = 171.0
+offset_top = -74.0
+offset_right = 630.0
+offset_bottom = 271.0
+color = Color(0, 0, 1, 1)
 
 [node name="ExitButton" type="Button" parent="Computer/ComputerUI/Mainmenu2" unique_id=278851081]
 layout_mode = 2
+size_flags_vertical = 10
+text = "Sair"
 
 [node name="Sketchfab_Scene" parent="." unique_id=1786845423 instance=ExtResource("15_n802c")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 1, -2.5)
