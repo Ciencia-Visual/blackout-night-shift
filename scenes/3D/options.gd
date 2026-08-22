@@ -23,11 +23,6 @@ func _alternar_interface(indice_alvo: int):
 			if subfilho is Control: 
 				subfilho.visible = deve_ficar_visivel
 
-func soltar_mouse():
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	var pos_atual = get_viewport().get_mouse_position()
-	get_viewport().warp_mouse(pos_atual)
-
 func _on_botao_clicado(botao_pressionado: Button):
 	var nome = botao_pressionado.name
 	var texto = botao_pressionado.text
@@ -47,19 +42,17 @@ func _on_botao_clicado(botao_pressionado: Button):
 			print("Ação padrão para o botão: ", texto)
 
 func abrir_energia():
-	soltar_mouse()
 	print("Executando: Abrir Painel de Energia")
 	_alternar_interface(0)
 
 func abrir_camera():
-	soltar_mouse()
 	print("Executando: Abrir Cameras")
 	_alternar_interface(1)
 
 func abrir_antena():
-	soltar_mouse()
 	print("Executando: Abrir Antena")
 	_alternar_interface(2)
 
 func desligar_pc():
 	$"..".visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

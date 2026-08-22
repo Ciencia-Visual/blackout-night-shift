@@ -34,7 +34,7 @@
 size = Vector3(2.8, 0.1, 1.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_01y1c"]
-size = Vector3(10, 0.2, 11.306519)
+size = Vector3(11.955566, 0.2, 11.651306)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8du81"]
 albedo_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
@@ -42,7 +42,7 @@ metallic = 0.44
 metallic_specular = 0.65
 
 [sub_resource type="BoxMesh" id="BoxMesh_spyda"]
-size = Vector3(10, 5, 0.2)
+size = Vector3(11.732422, 5, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llc1v"]
 albedo_color = Color(0.7413847, 0.7413847, 0.7413844, 0.3254902)
@@ -61,7 +61,7 @@ albedo_texture = ExtResource("8_doiwj")
 uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jyvnd"]
-size = Vector3(16, 0.2, 10)
+size = Vector3(13.13446, 0.2, 11.737213)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qjpn"]
 albedo_texture = ExtResource("8_doiwj")
@@ -177,7 +177,7 @@ bottom_radius = 0.1
 height = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_jv8vb"]
-size = Vector3(8, 6, 0.2)
+size = Vector3(10.725586, 6, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rdpry"]
 albedo_texture = ExtResource("8_doiwj")
@@ -258,7 +258,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -2)
 [node name="Structure" type="Node3D" parent="." unique_id=1950339874]
 
 [node name="Floor" type="MeshInstance3D" parent="Structure" unique_id=753796583]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6939713)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9777832, 0, 0.8663651)
 mesh = SubResource("BoxMesh_01y1c")
 surface_material_override/0 = SubResource("StandardMaterial3D_8du81")
 
@@ -273,16 +273,16 @@ mesh = SubResource("BoxMesh_abjja")
 surface_material_override/0 = SubResource("StandardMaterial3D_2irhw")
 
 [node name="Leftwallleft" type="MeshInstance3D" parent="Structure" unique_id=445857180]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2.5, 1.5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 2.5, 1.5029869)
 mesh = SubResource("BoxMesh_abjja")
 surface_material_override/0 = SubResource("StandardMaterial3D_n802c")
 
 [node name="Ceiling" type="MeshInstance3D" parent="Structure" unique_id=1202009724]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4327698, 5, 0.86860657)
 mesh = SubResource("BoxMesh_jyvnd")
 
 [node name="Rightwall" type="MeshInstance3D" parent="Structure" unique_id=960140429]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 2.5, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 2.5, 0.86621094)
 mesh = SubResource("BoxMesh_spyda")
 surface_material_override/0 = SubResource("StandardMaterial3D_7qjpn")
 
@@ -333,7 +333,7 @@ mesh = SubResource("CylinderMesh_01y1c")
 [node name="Hallwaypart" type="Node3D" parent="Structure" unique_id=579335652]
 
 [node name="Hallway" type="MeshInstance3D" parent="Structure/Hallwaypart" unique_id=106676302]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 2, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 2, 1.362793)
 mesh = SubResource("BoxMesh_jv8vb")
 surface_material_override/0 = SubResource("StandardMaterial3D_rdpry")
 
@@ -388,6 +388,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+mouse_filter = 2
 script = ExtResource("21_os4nj")
 
 [node name="Background" type="ColorRect" parent="Computer/ComputerUI" unique_id=1262987491]
@@ -717,6 +718,7 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(15, 2)
+mouse_filter = 2
 
 [node name="ColorRect2" type="ColorRect" parent="HUD/Crosshair" unique_id=800637353]
 layout_mode = 1
@@ -733,6 +735,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
 pivot_offset = Vector2(15, 2)
+mouse_filter = 2
 
 [node name="GameTime" type="Node" parent="." unique_id=1990327270 node_paths=PackedStringArray("energy_label", "time_label")]
 script = ExtResource("24_qtdnu")

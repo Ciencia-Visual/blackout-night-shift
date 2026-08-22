@@ -31,6 +31,8 @@ func _input(event):
 	# Clique captura o mouse
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if get_viewport().gui_get_hovered_control() != null:
+				return
 			if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 				return
