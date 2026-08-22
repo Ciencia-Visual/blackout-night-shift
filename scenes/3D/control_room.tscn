@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://7whvxo04sqbs" path="res://scenes/panels/computer_ui.gd" id="21_os4nj"]
 [ext_resource type="PackedScene" uid="uid://c3wsa2cqj33so" path="res://icons/bot_mecha_warrior_3d_by_oscar_creativo.glb" id="22_6syic"]
 [ext_resource type="Script" uid="uid://cty2vrf28h5g1" path="res://scenes/3D/cams.gd" id="22_20wnt"]
+[ext_resource type="Script" uid="uid://1hgycxwjaod8" path="res://scenes/3D/camera_ui.gd" id="22_mbsjt"]
 [ext_resource type="Script" uid="uid://de3qn7ioewi2b" path="res://scenes/3D/robot_threat1.gd" id="22_qtdnu"]
 [ext_resource type="Script" uid="uid://clknl5v6202aq" path="res://scenes/3D/status_bar.gd" id="23_11wea"]
 [ext_resource type="Script" uid="uid://cs67yo3qomolg" path="res://scenes/3D/game_time1.gd" id="24_qtdnu"]
@@ -435,9 +436,9 @@ offset_top = -35.0
 offset_right = 628.0
 offset_bottom = 305.0
 color = Color(1, 1, 0, 1)
+script = ExtResource("22_mbsjt")
 
 [node name="Cams" type="VBoxContainer" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI" unique_id=1292929406]
-z_index = 1
 layout_mode = 0
 offset_left = 265.0
 offset_top = 218.0
@@ -452,7 +453,7 @@ layout_mode = 2
 text = "Câmera 1"
 
 [node name="ColorRect" type="ColorRect" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams/Cam1" unique_id=2060514269]
-z_index = -1
+z_as_relative = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.082
@@ -462,8 +463,9 @@ anchor_bottom = -0.35500002
 offset_left = -279.514
 offset_top = -219.995
 offset_right = 181.486
-offset_bottom = 10.005001
-color = Color(0.54509807, 0, 0.5529412, 1)
+offset_bottom = 126.005005
+mouse_filter = 2
+color = Color(0.2878895, 0, 0.024994792, 1)
 
 [node name="Cam2" type="Button" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams" unique_id=1041286548]
 z_index = 1
@@ -471,13 +473,14 @@ layout_mode = 2
 text = "Câmera 2"
 
 [node name="ColorRect" type="ColorRect" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams/Cam2" unique_id=2136371148]
-z_index = -1
+z_as_relative = false
 layout_mode = 0
 offset_left = -264.0
 offset_top = -264.0
 offset_right = 194.0
-offset_bottom = -37.0
-color = Color(0, 1, 0.5294118, 1)
+offset_bottom = 79.0
+mouse_filter = 2
+color = Color(2.1658838e-07, 0.1993896, 0.08591794, 1)
 
 [node name="Cam3" type="Button" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams" unique_id=1453634201]
 z_index = 1
@@ -485,13 +488,14 @@ layout_mode = 2
 text = "Câmera 3"
 
 [node name="ColorRect" type="ColorRect" parent="Computer/ComputerUI/Options/Camerabutton/CameraUI/Cams/Cam3" unique_id=697748514]
-z_index = -1
+z_as_relative = false
 layout_mode = 0
 offset_left = -262.0
 offset_top = -298.0
 offset_right = 195.0
-offset_bottom = -72.0
-color = Color(1, 0.12941177, 1, 1)
+offset_bottom = 47.0
+mouse_filter = 2
+color = Color(0.26717517, 4.8636124e-05, 0.26764727, 1)
 
 [node name="Antenabutton" type="Button" parent="Computer/ComputerUI/Options" unique_id=182734621]
 layout_mode = 2
